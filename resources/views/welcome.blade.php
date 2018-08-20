@@ -1,95 +1,202 @@
-<!doctype html>
-<html lang="{{ app()->getLocale() }}">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+@extends('layouts.default') @section('content')
+<!-- IMAGE View
+<div class="container " id="#body_color">
+    <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img class="d-block w-100" src="{{ asset('images/backcover.jpg') }}" alt="First slide">
+            </div>
+        </div>
+    </div>
 
-        <title>Laravel</title>
+    --> 
 
-        <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet" type="text/css">
+    <br> 
+    @if (session('status'))
+    <div class="alert alert-success" role="alert">
+        {{ session('status') }}
+    </div>
+    @endif
 
-        <!-- Styles -->
-        <style>
-            html, body {
-                background-color: #fff;
-                color: #636b6f;
-                font-family: 'Nunito', sans-serif;
-                font-weight: 200;
-                height: 100vh;
-                margin: 0;
-            }
-
-            .full-height {
-                height: 100vh;
-            }
-
-            .flex-center {
-                align-items: center;
-                display: flex;
-                justify-content: center;
-            }
-
-            .position-ref {
-                position: relative;
-            }
-
-            .top-right {
-                position: absolute;
-                right: 10px;
-                top: 18px;
-            }
-
-            .content {
-                text-align: center;
-            }
-
-            .title {
-                font-size: 84px;
-            }
-
-            .links > a {
-                color: #636b6f;
-                padding: 0 25px;
-                font-size: 12px;
-                font-weight: 600;
-                letter-spacing: .1rem;
-                text-decoration: none;
-                text-transform: uppercase;
-            }
-
-            .m-b-md {
-                margin-bottom: 30px;
-            }
-        </style>
-    </head>
-    <body>
-        <div class="flex-center position-ref full-height">
-            @if (Route::has('login'))
-                <div class="top-right links">
-                    @auth
-                        <a href="{{ url('/home') }}">Home</a>
-                    @else
-                        <a href="{{ route('login') }}">Login</a>
-                        <a href="{{ route('register') }}">Register</a>
-                    @endauth
+    <div class="container">
+        <center>
+        <!-- Row -->
+        <div class="row">
+            <div class="col-sm">
+                <div class="card" id="card_gradient1" style="width: 18rem;text-align: center;">
+                    <div class="card-body">
+                        <h5 class="card-title" style="font-weight: bold;color: white;font-family: 'Fugaz One', cursive;font-size: 25px">Accommodation</h5>
+                        <h6 class="card-subtitle mb-2 text" style="color: white;">View Accommodation details</h6>
+                        <div class="btn-group-toggle" data-toggle="buttons">
+                            <label class="btn btn-dark active">
+                                <input type="checkbox" checked autocomplete="off"> Click Here
+                            </label>
+                        </div>
+                    </div>
                 </div>
-            @endif
+            </div>
 
-            <div class="content">
-                <div class="title m-b-md">
-                    Laravel
+            <div class="col-sm">
+                <div class="card" id="card_gradient1" style="width: 18rem;text-align: center;">
+                    <div class="card-body">
+                        <h5 class="card-title" style="font-weight: bold;color: white;font-family: 'Fugaz One', cursive;font-size: 25px">Darshan</h5>
+                        <h6 class="card-subtitle mb-2 text" style="color: white;">Darshan Timings</h6>
+                        <div class="btn-group-toggle" data-toggle="buttons">
+                            <label class="btn btn-dark active">
+                                <input type="checkbox" checked autocomplete="off"> Click Here
+                            </label>
+                        </div>
+                    </div>
                 </div>
+            </div>
 
-                <div class="links">
-                    <a href="https://laravel.com/docs">Documentation</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
+            <div class="col-sm">
+                <div class="card" id="card_gradient1" style="width: 18rem;text-align: center;">
+                    <div class="card-body">
+                        <h5 class="card-title" style="font-weight: bold;color: white;font-family: 'Fugaz One', cursive;font-size: 25px">Food</h5>
+                        <h6 class="card-subtitle mb-2 text" style="color: white;">Food Counters</h6>
+                        <div class="btn-group-toggle" data-toggle="buttons">
+                            <label class="btn btn-dark active">
+                                <input type="checkbox" checked autocomplete="off"> Click Here
+                            </label>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-    </body>
-</html>
+        <br>
+        <div class="row">
+            <div class="col-sm">
+                <div class="card" id="card_gradient4" style="width: 18rem;text-align: center;">
+                    <div class="card-body">
+                        <h5 class="card-title" style="font-weight: bold;color: white;font-family: 'Fugaz One', cursive;font-size: 25px">Events</h5>
+                        <h6 class="card-subtitle mb-2 text" style="color: white;">Special Events and Timings</h6>
+                        <div class="btn-group-toggle" data-toggle="buttons">
+                            <label class="btn btn-dark active">
+                                <input type="checkbox" checked autocomplete="off"> Click Here
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm">
+                <div class="card" id="card_gradient4" style="width: 18rem;text-align: center;">
+                    <div class="card-body">
+                        <h5 class="card-title" style="font-weight: bold;color: white;font-family: 'Fugaz One', cursive;font-size: 25px">Transportation</h5>
+                        <h6 class="card-subtitle mb-2 text" style="color: white;">View transportation details</h6>
+                        <div class="btn-group-toggle" data-toggle="buttons">
+                            <label class="btn btn-dark active">
+                                <input type="checkbox" checked autocomplete="off"> Click Here
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm">
+                <div class="card" id="card_gradient4" style="width: 18rem;text-align: center;">
+                    <div class="card-body">
+                        <h5 class="card-title" style="font-weight: bold;color: white;font-family: 'Fugaz One', cursive;font-size: 25px">Volunteers</h5>
+                        <h6 class="card-subtitle mb-2 text" style="color: white;">Volunteers of Amritavarsham 65</h6>
+                        <div class="btn-group-toggle" data-toggle="buttons">
+                            <label class="btn btn-dark active">
+                                <input type="checkbox" checked autocomplete="off"> Click Here
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-sm">
+                <div class="card" id="card_gradient1" style="width: 18rem;text-align: center;">
+                    <div class="card-body">
+                        <h5 class="card-title" style="font-weight: bold;color: white;font-family: 'Fugaz One', cursive;font-size: 25px">VCC</h5>
+                        <h6 class="card-subtitle mb-2 text" style="color: white;">View VCC Timings</h6>
+                        <div class="btn-group-toggle" data-toggle="buttons">
+                            <label class="btn btn-dark active">
+                                <input type="checkbox" checked autocomplete="off"> Click Here
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm">
+                <div class="card" id="card_gradient1" style="width: 18rem;text-align: center;">
+                    <div class="card-body">
+                        <h5 class="card-title" style="font-weight: bold;color: white;font-family: 'Fugaz One', cursive;font-size: 25px">Emergency</h5>
+                        <h6 class="card-subtitle mb-2 text" style="color: white;">Emergency contact details</h6>
+                        <div class="btn-group-toggle" data-toggle="buttons">
+                            <label class="btn btn-dark active">
+                                <input type="checkbox" checked autocomplete="off"> Click Here
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm">
+                <div class="card" id="card_gradient1" style="width: 18rem;text-align: center;">
+                    <div class="card-body">
+                        <h5 class="card-title" style="font-weight: bold;color: white;font-family: 'Fugaz One', cursive;font-size: 25px">VIP Details</h5>
+                        <h6 class="card-subtitle mb-2 text" style="color: white;">VIP details</h6>
+                        <div class="btn-group-toggle" data-toggle="buttons">
+                            <label class="btn btn-dark active">
+                                <input type="checkbox" checked autocomplete="off"/> Click Here
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-sm">
+                <div class="card" id="card_gradient4" style="width: 18rem;text-align: center;">
+                    <div class="card-body">
+                        <h5 class="card-title" style="font-weight: bold;color: white;font-family: 'Fugaz One', cursive;font-size: 25px">Security</h5>
+                        <h6 class="card-subtitle mb-2 text" style="color: white;">Security info</h6>
+                        <div class="btn-group-toggle" data-toggle="buttons">
+                            <label class="btn btn-dark active">
+                                <input type="checkbox" checked autocomplete="off"> Click Here
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm">
+                <div class="card" id="card_gradient4" style="width: 18rem;text-align: center;">
+                    <div class="card-body">
+                        <h5 class="card-title" style="font-weight: bold;color: white;font-family: 'Fugaz One', cursive;font-size: 25px">Media</h5>
+                        <h6 class="card-subtitle mb-2 text" style="color: white;">News & Media</h6>
+                        <div class="btn-group-toggle" data-toggle="buttons">
+                            <label class="btn btn-dark active">
+                                <input type="checkbox" checked autocomplete="off"> Click Here
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm">
+                <div class="card" id="card_gradient4" style="width: 18rem;text-align: center;">
+                    <div class="card-body">
+                        <h5 class="card-title" style="font-weight: bold;color: white;font-family: 'Fugaz One', cursive;font-size: 25px">FAQ</h5>
+                        <h6 class="card-subtitle mb-2 text" style="color: white;">Frequently asked questions</h6>
+                        <div class="btn-group-toggle" data-toggle="buttons">
+                            <label class="btn btn-dark active">
+                                <input type="checkbox" checked autocomplete="off"/> Click Here
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </center>
+    </div>
+
+@endsection
