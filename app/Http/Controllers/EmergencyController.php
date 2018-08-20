@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Accommodation;
+use App\Emergency;
 use Illuminate\Http\Request;
 
-class AccommodationController extends Controller
+class EmergencyController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -41,10 +41,10 @@ class AccommodationController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Accommodation  $accommodation
+     * @param  \App\Emergency  $emergency
      * @return \Illuminate\Http\Response
      */
-    public function show(Accommodation $accommodation)
+    public function show(Emergency $emergency)
     {
         //
     }
@@ -52,10 +52,10 @@ class AccommodationController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Accommodation  $accommodation
+     * @param  \App\Emergency  $emergency
      * @return \Illuminate\Http\Response
      */
-    public function edit(Accommodation $accommodation)
+    public function edit(Emergency $emergency)
     {
         //
     }
@@ -64,10 +64,10 @@ class AccommodationController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Accommodation  $accommodation
+     * @param  \App\Emergency  $emergency
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Accommodation $accommodation)
+    public function update(Request $request, Emergency $emergency)
     {
         //
     }
@@ -75,10 +75,10 @@ class AccommodationController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Accommodation  $accommodation
+     * @param  \App\Emergency  $emergency
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Accommodation $accommodation)
+    public function destroy(Emergency $emergency)
     {
         //
     }
