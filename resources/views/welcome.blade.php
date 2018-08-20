@@ -10,6 +10,7 @@
     </div>
 
     --> 
+
     <br> 
     @if (session('status'))
     <div class="alert alert-success" role="alert">
@@ -17,7 +18,7 @@
     </div>
     @endif
 
-    <div class="container ">
+    <div class="container">
         <!-- Row -->
         <div class="row">
             <div class="col-sm">
@@ -106,7 +107,7 @@
                 </div>
             </div>
         </div>
-        <hr>
+        <br>
         <div class="row">
             <div class="col-sm">
                 <div class="card" id="card_gradient2" style="width: 18rem;text-align: center;">
@@ -151,6 +152,5 @@
             </div>
         </div>
     </div>
-</div>
 
 @endsection
