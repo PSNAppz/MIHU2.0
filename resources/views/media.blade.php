@@ -5,7 +5,7 @@
             <div class="pricingTable purple">
                 <div class="pricingTable-header">
                     <h3>ASIAnet news</h3><span>Asianet News Kochin Desk</span></div>
-                <div class="pricing-plans"><span class="price-value"><span>Editors:</span></span><span class="month"></span></div>
+                <div class="pricing-plans"><span class="price-value"><span>Crew:</span></span><span class="month"></span></div>
                 <div class="pricingContent" style="background:azure">
                     <ul>
                         <li>Jaya</li>
@@ -21,7 +21,7 @@
             <div class="pricingTable green">
                 <div class="pricingTable-header">
                     <h3>amrita tv</h3><span>Amrita TV Trivandrum Desk</span></div>
-                <div class="pricing-plans"><span class="price-value"><span>Editors:</span></span>
+                <div class="pricing-plans"><span class="price-value"><span>Crew:</span></span>
                 </div>
                 <div class="pricingContent" style="background:azure">
                     <ul>
@@ -38,7 +38,7 @@
             <div class="pricingTable yellow">
                 <div class="pricingTable-header">
                     <h3>BBC</h3><span>BBC Mumbai Desk</span></div>
-                <div class="pricing-plans"><span class="price-value"><span>Editors:</span></span>
+                <div class="pricing-plans"><span class="price-value"><span>Crew:</span></span>
                 </div>
                 <div class="pricingContent" style="background:azure">
                     <ul>
