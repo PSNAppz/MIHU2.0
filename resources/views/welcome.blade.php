@@ -136,7 +136,7 @@
         <br/>
         <div class="row">
                 <div class="col-sm">
-                    <div class="card" id="card_gradient2" style="width: 18rem;text-align: center;">
+                    <div class="card" id="card_gradient1" style="width: 18rem;text-align: center;">
                        <a href="#" style="text-decoration:none;"> <div class="card-body">
                         <i class="fa fa-shield" style="font-size:40px;color:white"></i>
                             <h5 class="card-title" style="font-weight: bold;color: white;font-family: 'Fugaz One', cursive;font-size: 25px">Security</h5>
@@ -147,8 +147,8 @@
                 </div>
     
                 <div class="col-sm">
-                    <div class="card" id="card_gradient2" style="width: 18rem;text-align: center;">
-                       <a href="#" style="text-decoration:none;"> <div class="card-body">
+                    <div class="card" id="card_gradient1" style="width: 18rem;text-align: center;">
+                       <a href="media" style="text-decoration:none;"> <div class="card-body">
                         <i class="fa fa-camera" style="font-size:40px;color:white"></i> 
                             <h5 class="card-title" style="font-weight: bold;color: white;font-family: 'Fugaz One', cursive;font-size: 25px">Media</h5>
                             <h6 class="card-subtitle mb-2 text" style="color: white;">News and Media</h6>
@@ -158,7 +158,7 @@
                 </div>
     
                 <div class="col-sm">
-                    <div class="card" id="card_gradient2" style="width: 18rem;text-align: center;">
+                    <div class="card" id="card_gradient1" style="width: 18rem;text-align: center;">
                         <a href="#" style="text-decoration:none;"><div class="card-body">
                         <i class="fa fa-question"  style="font-size:40px;color:white"></i>
                             <h5 class="card-title" style="font-weight: bold;color: white;font-family: 'Fugaz One', cursive;font-size: 25px">FAQ</h5>

@@ -14,7 +14,12 @@
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/media',function(){
+    return view('media');
+});
+
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
