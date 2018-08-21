@@ -82,41 +82,34 @@
             background: linear-gradient(to left, #4A00E0, #8E2DE2); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
         }
         #card_gradient2{
-           background: #F3904F;  /* fallback for old browsers */
-background: -webkit-linear-gradient(to right, #3B4371, #F3904F);  /* Chrome 10-25, Safari 5.1-6 */
-background: linear-gradient(to right, #3B4371, #F3904F); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
+            background: #F3904F;  /* fallback for old browsers */
+            background: -webkit-linear-gradient(to right, #3B4371, #F3904F);  /* Chrome 10-25, Safari 5.1-6 */
+            background: linear-gradient(to right, #3B4371, #F3904F); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
         }
         #card_gradient3{
             background: #C04848;  /* fallback for old browsers */
             background: -webkit-linear-gradient(to left, #480048, #C04848);  /* Chrome 10-25, Safari 5.1-6 */
             background: linear-gradient(to left, #480048, #C04848); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
-
         }
         #card_gradient4{
             background: #ee0979;  /* fallback for old browsers */
             background: -webkit-linear-gradient(to left, #ff6a00, #ee0979);  /* Chrome 10-25, Safari 5.1-6 */
             background: linear-gradient(to left, #ff6a00, #ee0979); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
         }
         #card_gradient5{
             background: #ff00cc;  /* fallback for old browsers */
             background: -webkit-linear-gradient(to left, #333399, #ff00cc);  /* Chrome 10-25, Safari 5.1-6 */
             background: linear-gradient(to left, #333399, #ff00cc); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
         }
         #card_gradient6{
             background: #00C9FF;  /* fallback for old browsers */
             background: -webkit-linear-gradient(to left, #92FE9D, #00C9FF);  /* Chrome 10-25, Safari 5.1-6 */
             background: linear-gradient(to left, #92FE9D, #00C9FF); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
         }
         .body_color{
             background: #0f0c29;  /* fallback for old browsers */
             background: -webkit-linear-gradient(to right, #24243e, #302b63, #0f0c29);  /* Chrome 10-25, Safari 5.1-6 */
             background: linear-gradient(to right, #24243e, #302b63, #0f0c29); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
         }
         #nav_color{
             background: #cb2d3e;  /* fallback for old browsers */
@@ -136,13 +129,10 @@ background: linear-gradient(to right, #3B4371, #F3904F); /* W3C, IE 10+/ Edge, F
             background: #1D2B64;  /* fallback for old browsers */
             background: -webkit-linear-gradient(to left, #F8CDDA, #1D2B64);  /* Chrome 10-25, Safari 5.1-6 */
             background: linear-gradient(to left, #F8CDDA, #1D2B64); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
         }
 
     </style>
-
     <center><img src="{{ asset('images/design.png') }}" alt="" width="80%" height="70%" style="opacity:.1" ></center>
-
     <div class="footer">
   <h6>Copyright 2018 Department of CSA.</h6>
 </div>
