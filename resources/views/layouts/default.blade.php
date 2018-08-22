@@ -26,6 +26,7 @@
     <!--Media CSS-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.min.css" type="text/css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css" type="text/css">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
@@ -118,13 +119,15 @@
         }
         .body_color{
             background: #0f0c29;  /* fallback for old browsers */
-            background: -webkit-linear-gradient(to right, #24243e, #302b63, #0f0c29);  /* Chrome 10-25, Safari 5.1-6 */
-            background: linear-gradient(to right, #24243e, #302b63, #0f0c29); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+            background: -webkit-linear-gradient(to top, #24243e, #302b63, #0f0c29);  /* Chrome 10-25, Safari 5.1-6 */
+            background: linear-gradient(to top, #24243e, #302b63, #0f0c29); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
         }
         #nav_color{
-            background: #cb2d3e;  /* fallback for old browsers */
-            background: -webkit-linear-gradient(to left, #ef473a, #cb2d3e);  /* Chrome 10-25, Safari 5.1-6 */
-            background: linear-gradient(to left, #ef473a, #cb2d3e); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+            background: #FFB75E;  /* fallback for old browsers */
+            background: -webkit-linear-gradient(to bottom, #ED8F03, #FFB75E);  /* Chrome 10-25, Safari 5.1-6 */
+            background: linear-gradient(to bottom, #ED8F03, #FFB75E); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
             color:white;
         }
         .footer {
@@ -132,13 +135,15 @@
             left: 0;
             bottom: 0;
             width: 100%;
+            height: 50px;
             color: white;
-            padding: 5px;
-            margin-top: 1px;
+            padding: 20px;
             text-align: center;
-            background: #1D2B64;  /* fallback for old browsers */
-            background: -webkit-linear-gradient(to left, #F8CDDA, #1D2B64);  /* Chrome 10-25, Safari 5.1-6 */
-            background: linear-gradient(to left, #F8CDDA, #1D2B64); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+            padding-bottom: 0px;
+            background: #0f0c29;  /* fallback for old browsers */
+            background: -webkit-linear-gradient(to top, #24243e, #302b63, #0f0c29);  /* Chrome 10-25, Safari 5.1-6 */
+            background: linear-gradient(to top, #24243e, #302b63, #0f0c29); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
         }
 
     </style>
