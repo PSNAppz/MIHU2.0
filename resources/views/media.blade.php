@@ -1,9 +1,12 @@
 @extends('layouts.default') @section('content')
-    <h3 style="color:aliceblue;text-align:center">Media Covering Live Telecast at Amritapuri</h3>
+<!--Update Images with the Logos of each channels-->
+<!--Buttons for Link of Channels website-->
+<h3 style="color:aliceblue;text-align:center">Media Covering Live Telecast at Amritapuri</h3>
     <div class="row">
         <div class="col-sm-4 col-md-4">
             <div class="pricingTable purple">
                 <div class="pricingTable-header">
+                    <img class="rounded-circle" src="{{ asset('images/2.jpg') }}" style="height:110px;width:110px">
                     <h3>ASIAnet news</h3><span>Asianet News Kochin Desk</span></div>
                 <div class="pricing-plans"><span class="price-value"><span>Crew:</span></span><span class="month"></span></div>
                 <div class="pricingContent" style="background:azure">
@@ -20,6 +23,7 @@
         <div class="col-sm-4 col-md-4">
             <div class="pricingTable green">
                 <div class="pricingTable-header">
+                    <img class="rounded-circle" src="{{ asset('images/2.jpg') }}" style="height:110px;width:110px">
                     <h3>amrita tv</h3><span>Amrita TV Trivandrum Desk</span></div>
                 <div class="pricing-plans"><span class="price-value"><span>Crew:</span></span>
                 </div>
@@ -37,6 +41,7 @@
         <div class="col-sm-4 col-md-4">
             <div class="pricingTable yellow">
                 <div class="pricingTable-header">
+                    <img class="rounded-circle" src="{{ asset('images/2.jpg') }}" style="height:110px;width:110px">
                     <h3>BBC</h3><span>BBC Mumbai Desk</span></div>
                 <div class="pricing-plans"><span class="price-value"><span>Crew:</span></span>
                 </div>
@@ -57,5 +62,4 @@
             <p class="copyright">Dept. CSA Amrita University Amritapuri Campus © 2018</p>
         </footer>
     </div>-->
-
 @endsection
