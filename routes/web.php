@@ -14,6 +14,10 @@
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/media',function(){
+    return view('media');
+});
+
 
 Route::get('emergency', function(){
     return view('emergency');
@@ -22,3 +26,4 @@ Route::get('emergency', function(){
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
