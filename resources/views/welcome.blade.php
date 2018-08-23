@@ -18,9 +18,9 @@
     </div>
     @endif
     <!--CSS Link from font awesome-->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.min.css">
+    <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.min.css">-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="{{  asset('css/styles.min.css') }}">
+    <!--<link rel="stylesheet" href="{{  asset('css/styles.min.css') }}">-->
     <div class="container">
         <!-- Row -->
         <div class="row">
