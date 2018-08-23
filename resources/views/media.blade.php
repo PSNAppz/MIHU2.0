@@ -15,7 +15,7 @@
         <div class="col-sm-4 col-md-4">
             <div class="p-3 mb-2 bg-light text-dark">
                 <div class="p-3 mb-2 bg-light text-dark">
-                    <img class="rounded-circle" src="{{ asset('images/2.jpg') }}" style="height:110px;width:110px">
+                    <img class="rounded-circle" src="{{ asset('images/asianet.png') }}" style="height:110px;width:110px">
                     <b><h3>Asianet news</h3></b><span><b>Asianet News Kochin Desk</b></span></div>
                 <div class="p-3 mb-2 bg-light text-dark"><b><span class="priceContent" style="text-size:90px;color:black"><span><h5>Crew Members</h5></span></span></b></div>
                 <div class="p-3 mb-2 bg-light text-dark" style="background:azure">
@@ -26,13 +26,13 @@
                     Ram<br/>
                 </div>
                 </div>
-                <b style="color:gold"><div class="btn btn-danger"><a href="#" class="btn btn-block"><b>Website</b></a></div></b>
+                <b style="color:gold"><div class="btn btn-danger"><a href="https://www.asianetnews.com/" class="btn btn-block"><b>Website</b></a></div></b>
             </div>
         </div>
         <div class="col-sm-4 col-md-4">
             <div class="p-3 mb-2 bg-light text-dark">
                 <div class="p-3 mb-2 bg-light text-dark">
-                    <img class="rounded-circle" src="{{ asset('images/2.jpg') }}" style="height:110px;width:110px">
+                    <img class="rounded-circle" src="{{ asset('images/amrita.jpg') }}" style="height:110px;width:110px">
                     <b><h3>Amrita tv</h3><span>Amrita TV Trivandrum Desk</span></b></div>
                 <h5><div class="p-3 mb-2 bg-light text-dark"><b><span class="priceContent" style="text-size:90px;color:navy"><span>Crew Members</span></span></b>
                 </div></h5>
@@ -44,13 +44,13 @@
                         Jayashree<br/>
                     </div class="p-3 mb-2 bg-light text-dark">
                 </div>
-                <div class="btn btn-danger"><a href="#" class="btn btn-block"><b>Website</b></a></div>
+                <div class="btn btn-danger"><a href="https://www.amritatv.com/" class="btn btn-block"><b>Website</b></a></div>
             </div>
         </div>
         <div class="col-sm-4 col-md-4">
             <div class="p-3 mb-2 bg-light text-dark">
                 <div class="p-3 mb-2 bg-light text-dark">
-                    <img class="rounded-circle" src="{{ asset('images/2.jpg') }}" style="height:110px;width:110px">
+                    <img class="rounded-circle" src="{{ asset('images/bbc.jpg') }}" style="height:110px;width:110px">
                     <h3>BBC</h3><span>BBC Mumbai Desk</span></div>
                <h5><div class="p-3 mb-2 bg-light text-dark"><b><span class="priceContent" style="text-size:90px;color:navy"><span>Crew Members</span></span></b>
                 </div></h5>
@@ -62,7 +62,7 @@
                         Jisha<br/>
                 </div>
                 </div>
-                <div class="btn btn-danger"><a href="#" class="btn btn-block"><b>Website</b></a></div>
+                <div class="btn btn-danger"><a href="www.bbc.com/" class="btn btn-block"><b>Website</b></a></div>
             </div>
         </div>
     </div>
