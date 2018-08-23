@@ -19,6 +19,10 @@ Route::get('/media',function(){
 });
 
 
+Route::get('emergency', function(){
+    return view('emergency');
+});
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
