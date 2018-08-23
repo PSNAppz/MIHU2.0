@@ -19,7 +19,6 @@
     @endif
     <!--CSS Link from font awesome-->
     <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.min.css">-->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <!--<link rel="stylesheet" href="{{  asset('css/styles.min.css') }}">-->
     <div class="container">
         <!-- Row -->
@@ -136,7 +135,7 @@
         <br/>
         <div class="row">
                 <div class="col-sm">
-                    <div class="card" id="card_gradient1" style="width: 18rem;text-align: center;">
+                    <div class="card" id="card_gradient2" style="width: 18rem;text-align: center;">
                        <a href="#" style="text-decoration:none;"> <div class="card-body">
                         <i class="fa fa-shield" style="font-size:40px;color:white"></i>
                             <h5 class="card-title" style="font-weight: bold;color: white;font-family: 'Fugaz One', cursive;font-size: 25px">Security</h5>
@@ -147,7 +146,7 @@
                 </div>
     
                 <div class="col-sm">
-                    <div class="card" id="card_gradient1" style="width: 18rem;text-align: center;">
+                    <div class="card" id="card_gradient2" style="width: 18rem;text-align: center;">
                        <a href="media" style="text-decoration:none;"> <div class="card-body">
                         <i class="fa fa-camera" style="font-size:40px;color:white"></i> 
                             <h5 class="card-title" style="font-weight: bold;color: white;font-family: 'Fugaz One', cursive;font-size: 25px">Media</h5>
@@ -158,7 +157,7 @@
                 </div>
     
                 <div class="col-sm">
-                    <div class="card" id="card_gradient1" style="width: 18rem;text-align: center;">
+                    <div class="card" id="card_gradient2" style="width: 18rem;text-align: center;">
                         <a href="#" style="text-decoration:none;"><div class="card-body">
                         <i class="fa fa-question"  style="font-size:40px;color:white"></i>
                             <h5 class="card-title" style="font-weight: bold;color: white;font-family: 'Fugaz One', cursive;font-size: 25px">FAQ</h5>
