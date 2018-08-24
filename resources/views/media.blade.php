@@ -10,6 +10,7 @@
     }
 </style>
 <h3 style="color:aliceblue;text-align:center"><b>Media Covering Live Telecast at Amritapuri</b></h3>
+<div class="container">
     <center>
         <div class="row">
         <div class="col-sm-4 col-md-4">
@@ -67,6 +68,7 @@
         </div>
     </div>
     </center>
+</div>
     <!--<div class="footer-basic">
         <footer>
             <p class="copyright">Dept. CSA Amrita University Amritapuri Campus © 2018</p>
