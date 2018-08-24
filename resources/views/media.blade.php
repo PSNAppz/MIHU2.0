@@ -17,7 +17,7 @@
                 <div class="p-3 mb-2 bg-light text-dark">
                     <img class="rounded-circle" src="{{ asset('images/asianet.png') }}" style="height:110px;width:110px">
                     <b><h3>Asianet news</h3></b><span><b>Asianet News Kochin Desk</b></span></div>
-                <div class="p-3 mb-2 bg-light text-dark"><b><span class="priceContent" style="text-size:90px;color:black"><span><h5>Crew Members</h5></span></span></b></div>
+                <div class="p-3 mb-2 bg-light text-dark"><b><span class="priceContent" style="text-size:90px;color:navy"><span><h5>Crew Members</h5></span></span></b></div>
                 <div class="p-3 mb-2 bg-light text-dark" style="background:azure">
                 <div class="p-3 mb-2 bg-light text-dark">
                     Jaya<br/>
@@ -62,7 +62,7 @@
                         Jisha<br/>
                 </div>
                 </div>
-                <div class="btn btn-danger"><a href="www.bbc.com/" class="btn btn-block"><b>Website</b></a></div>
+                <div class="btn btn-danger"><a href="www.bbc.com/" class="btn btn-block"><b>Website</b></a></div><br/>
             </div>
         </div>
     </div>
