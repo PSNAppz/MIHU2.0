@@ -9,7 +9,7 @@
     font-family: 'Dosis', Arial, sans-serif;  
     }
 </style>
-<h3 style="color:aliceblue;text-align:center"><b>Media Covering Live Telecast at Amritapuri</b></h3>
+<h3 style="color:aliceblue;text-align:center"><b>News & Media</b></h3>
 <div class="container">
     <center>
         <div class="row">
