@@ -54,7 +54,7 @@
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="{{ route('logout') }}" style="color:white;"
+                                    <a class="dropdown-item" href="{{ route('logout') }}" style="color:black;"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
                                         {{ ('Logout') }}
@@ -63,7 +63,13 @@
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                         @csrf
                                     </form>
+
+                                    <a class="dropdown-item" href="/admin" style="color:black;">
+                                        Dashboard
+                                    </a>
                                 </div>
+
+                                    
                             </li>
                         @endguest
                     </ul>
@@ -113,9 +119,7 @@
             background: linear-gradient(to right, #24243e, #302b63, #0f0c29); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
         }
         #nav_color{
-            background: #cb2d3e;  /* fallback for old browsers */
-            background: -webkit-linear-gradient(to left, #ef473a, #cb2d3e);  /* Chrome 10-25, Safari 5.1-6 */
-            background: linear-gradient(to left, #ef473a, #cb2d3e); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+            background-image: linear-gradient(to top, #1e3c72 0%, #1e3c72 1%, #2a5298 100%);
             color:white;
         }
         .footer {
@@ -124,12 +128,10 @@
             bottom: 0;
             width: 100%;
             color: white;
-            padding: 5px;
-            margin-top: 1px;
+            padding: 10px;
+            margin-top: 2px;
             text-align: center;
-            background: #1D2B64;  /* fallback for old browsers */
-            background: -webkit-linear-gradient(to left, #F8CDDA, #1D2B64);  /* Chrome 10-25, Safari 5.1-6 */
-            background: linear-gradient(to left, #F8CDDA, #1D2B64); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+            background-image: linear-gradient(-225deg, #473B7B 0%, #3584A7 51%, #30D2BE 100%);   
         }
     </style>
 
