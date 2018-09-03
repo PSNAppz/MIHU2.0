@@ -19,7 +19,8 @@
     @endif
   <div class="container">
         <center>
-            <h1 style="color:white;">FAQs</h1>
+        <h1 class="display-1" style="color:white;">FAQs</h1>
+            
         </center>
     </div>
 
