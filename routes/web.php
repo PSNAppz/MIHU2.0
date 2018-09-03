@@ -27,4 +27,6 @@ Auth::routes();
 
 Route::resource('admin','AdminController');
 
+Route::resource('faq','FAQController');
+
 
