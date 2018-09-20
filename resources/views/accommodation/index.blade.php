@@ -1,77 +1,55 @@
 @extends('layouts.default') @section('content')
-<!--Update Images with the Logos of each channels-->
-<!--Buttons for Link of Channels website-->
-<style>
-    li{
-    padding: 1em;
-    text-align: center;
-    font-size: 17pt;
-    font-family: 'Dosis', Arial, sans-serif;  
-    }
-</style>
-<h3 style="color:aliceblue;text-align:center"><b>News & Media</b></h3>
+<br> 
 <div class="container">
-    <center>
-        <div class="row">
-        <div class="col-sm-4 col-md-4">
-            <div class="p-3 mb-2 bg-light text-dark">
-                <div class="p-3 mb-2 bg-light text-dark">
-                    <img class="rounded-circle" src="{{ asset('images/asianet.png') }}" style="height:110px;width:110px">
-                    <b><h3>Asianet news</h3></b><span><b>Asianet News Kochin Desk</b></span></div>
-                <div class="p-3 mb-2 bg-light text-dark"><b><span class="priceContent" style="text-size:90px;color:navy"><span><h5>Crew Members</h5></span></span></b></div>
-                <div class="p-3 mb-2 bg-light text-dark" style="background:azure">
-                <div class="p-3 mb-2 bg-light text-dark">
-                    Jaya<br/>
-                    Anand<br/>
-                    James<br/>      
-                    Ram<br/>
-                </div>
-                </div>
-                <b style="color:gold"><div class="btn btn-danger"><a href="https://www.asianetnews.com/" class="btn btn-block"><b>Website</b></a></div></b>
-            </div>
-        </div>
-        <div class="col-sm-4 col-md-4">
-            <div class="p-3 mb-2 bg-light text-dark">
-                <div class="p-3 mb-2 bg-light text-dark">
-                    <img class="rounded-circle" src="{{ asset('images/amrita.jpg') }}" style="height:110px;width:110px">
-                    <b><h3>Amrita tv</h3><span>Amrita TV Trivandrum Desk</span></b></div>
-                <h5><div class="p-3 mb-2 bg-light text-dark"><b><span class="priceContent" style="text-size:90px;color:navy"><span>Crew Members</span></span></b>
-                </div></h5>
-                <div class="p-3 mb-2 bg-light text-dark" style="background:azure">
-                    <div class="p-3 mb-2 bg-light text-dark">
-                        Lakshmi<br/>
-                        Raji<br/>
-                        Arjun<br/>
-                        Jayashree<br/>
-                    </div class="p-3 mb-2 bg-light text-dark">
-                </div>
-                <div class="btn btn-danger"><a href="https://www.amritatv.com/" class="btn btn-block"><b>Website</b></a></div>
-            </div>
-        </div>
-        <div class="col-sm-4 col-md-4">
-            <div class="p-3 mb-2 bg-light text-dark">
-                <div class="p-3 mb-2 bg-light text-dark">
-                    <img class="rounded-circle" src="{{ asset('images/bbc.jpg') }}" style="height:110px;width:110px">
-                    <h3>BBC</h3><span>BBC Mumbai Desk</span></div>
-               <h5><div class="p-3 mb-2 bg-light text-dark"><b><span class="priceContent" style="text-size:90px;color:navy"><span>Crew Members</span></span></b>
-                </div></h5>
-                <div class="p-3 mb-2 bg-light text-dark">
-                <div class="p-3 mb-2 bg-light text-dark" style="background:azure">
-                        Vijay<br/>
-                        Abhilash<br/>
-                        Adin<br/>
-                        Jisha<br/>
-                </div>
-                </div>
-                <div class="btn btn-danger"><a href="www.bbc.com/" class="btn btn-block"><b>Website</b></a></div><br/>
-            </div>
-        </div>
-    </div>
-    </center>
+   <script>
+      $(document).ready( function () {
+       $('#example').DataTable();
+      } );
+   </script>
+   <script>
+      window.Laravel = <?php echo json_encode([
+         'csrfToken' => csrf_token(),
+         ]); ?>
+   </script>
+   <style type="text/css">
+      body{
+      color:white;
+      }
+   </style>
+   <h2 class="display-4" style="color:white;">Accommodation Details</h2>
+   <center>
+      <table id="example" class="table table-striped table-bordered dt-responsive nowrap" style="width:100%;color:white;">
+         <thead>
+            <tr>
+               <th>Name</th>
+               <th>Position</th>
+               <th>Office</th>
+               <th>Age</th>
+               <th>Start date</th>
+               <th>Salary</th>
+            </tr>
+         </thead>
+         <tbody>
+            <tr>
+               <td>Tiger Nixon</td>
+               <td>System Architect</td>
+               <td>Edinburgh</td>
+               <td>61</td>
+               <td>2011/04/25</td>
+               <td>$320,800</td>
+            </tr>
+         </tbody>
+         <tfoot>
+            <tr>
+               <th>Name</th>
+               <th>Position</th>
+               <th>Office</th>
+               <th>Age</th>
+               <th>Start date</th>
+               <th>Salary</th>
+            </tr>
+         </tfoot>
+      </table>
+   </center>
 </div>
-    <!--<div class="footer-basic">
-        <footer>
-            <p class="copyright">Dept. CSA Amrita University Amritapuri Campus © 2018</p>
-        </footer>
-    </div>-->
 @endsection
