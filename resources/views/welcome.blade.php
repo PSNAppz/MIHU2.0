@@ -23,7 +23,7 @@
         <!-- Row -->
         <div class="row">
             <div class="col-sm">
-                <a href="#" style="text-decoration: none;">
+                <a href="/accommodation" style="text-decoration: none;">
                     <div class="card" id="card_gradient1" style="width: 18rem;text-align: center;">
                         <div class="card-body">
                             <i style="font-size:40px;color:white;" class="fa fa-building icon"></i>

@@ -14,16 +14,14 @@
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/media',function(){
-    return view('media');
-});
-
-
-Route::get('emergency', function(){
-    return view('emergency');
-});
-
 Auth::routes();
+
+
+Route::resource('media','MediaController');
+
+Route::resource('emergency','EmergencyController');
+
+Route::resource('accommodation','AccommodationController');
 
 Route::resource('admin','AdminController');
 
