@@ -32,24 +32,46 @@
             <div class="tab-pane fade show active" id="v-pills-devotees" role="tabpanel" aria-labelledby="v-pills-devotees-tab">
                <table id="devotees" class="table table-striped table-bordered dt-responsive nowrap" style="width:100%;color:white;">
                   <thead>
-                     <tr>
-                        <th>Name</th>
-                        <th>Position</th>
-                        <th>Office</th>
-                        <th>Age</th>
-                        <th>Start date</th>
-                        <th>Salary</th>
-                     </tr>
-                  </thead>
+                                <th>State/Others</th>
+                                <th>Place/Category</th>
+                                <th>For:</th>
+                                <th>Accommodation at</th>
+                                <th>Contact Name</th>
+                                <th>Phone</th>
+                                @if(!Auth::guest())
+                                <th></th>
+                                <th></th>
+                            @endif
+                            </thead>
                   <tbody>
-                     <tr>
-                        <td>Tiger Nixon</td>
-                        <td>System Architect</td>
-                        <td>Edinburgh</td>
-                        <td>61</td>
-                        <td>2011/04/25</td>
-                        <td>$320,800</td>
-                     </tr>
+                     @foreach($accommodations as $acc)
+                                    @if ($acc->areaName != "Amrita University" && $acc->areaName != "Amrita Vidyalayam")
+                                    <tr>
+                                        <th>{{ $acc->areaName}}</th>
+                                        <th>{{ $acc->category}}</th>
+                                        @if($acc->gender==0)
+                                            <th>Men</th>
+                                        @elseif($acc->gender==1)
+                                            <th>Women</th>
+                                        @elseif($acc->gender==4)
+                                            <th>VIP</th>
+                                        @elseif($acc->gender==2)
+                                            <th>Police Men</th>
+                                        @else
+                                            <th>Police Women</th>
+                                        @endif
+                                        <th>{{ $acc->locationofAcc}}</th>
+                                        <th>{{ $acc->coord}}</th>
+                                        <th>{{ $acc->contact}}</th>
+                                        @if(!Auth::guest())
+                                        <th><a class="btn btn-warning" href="{{ route('accommodation.edit', $acc->id,'/edit') }}" role="button">Update</a></th>
+                                        <th>  {{ Form::open(['method' => 'DELETE', 'route' => ['accommodation.destroy', $acc->id]]) }}
+                                        {{ Form::submit('Delete', ['class' => 'btn btn-danger']) }}
+                                        {{ Form::close() }}</th>
+                                        @endif
+                                    </tr>
+                                    @endif
+                     @endforeach
                   </tbody>
                   <tfoot>
                      <tr>
