@@ -14,7 +14,7 @@ class EmergencyController extends Controller
      */
     public function index()
     {
-        //
+        return view('emergency.index');
     }
 
     /**

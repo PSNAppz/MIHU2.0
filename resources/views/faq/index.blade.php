@@ -7,7 +7,8 @@
     @endif
   <div class="container">
         <center>
-            <h1 style="color: white;"> <i class="fa fa-exclamation-triangle"></i> Uhm... 404 -_-</h1>
+        <h1 class="display-1" style="color:white;">FAQs</h1>
+            
         </center>
     </div>
 
