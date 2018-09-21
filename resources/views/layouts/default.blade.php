@@ -36,7 +36,7 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     
 </head>
-<body class="body_color">
+<body class="body_color" style="color:white;">
     <div id="app" class="main_div">
         <nav class="navbar navbar-expand-md navbar-light navbar-laravel" id="nav_color">
             <div class="container">
