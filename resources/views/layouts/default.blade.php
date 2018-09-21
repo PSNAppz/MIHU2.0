@@ -11,7 +11,7 @@
     <title>MIHU 2.0 </title>
 
     <!-- Scripts -->
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.min.js"></script>
+    <script src="https://cdn.zingchart.com/zingchart.min.js"></script>
    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
@@ -36,7 +36,7 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     
 </head>
-<body class="body_color">
+<body class="body_color" style="color:white;">
     <div id="app" class="main_div">
         <nav class="navbar navbar-expand-md navbar-light navbar-laravel" id="nav_color">
             <div class="container">
@@ -65,6 +65,12 @@
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="/" style="color:black;">
+                                        Home
+                                    </a>
+                                    <a class="dropdown-item" href="/admin" style="color:black;">
+                                        Dashboard
+                                    </a>
                                     <a class="dropdown-item" href="{{ route('logout') }}" style="color:black;"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
@@ -75,9 +81,7 @@
                                         @csrf
                                     </form>
 
-                                    <a class="dropdown-item" href="/admin" style="color:black;">
-                                        Dashboard
-                                    </a>
+                                    
                                 </div>
 
                                     
@@ -130,8 +134,8 @@
             background: linear-gradient(to right, #24243e, #302b63, #0f0c29); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
         }
         #nav_color{
-            background-image: linear-gradient(to top, #1e3c72 0%, #1e3c72 1%, #2a5298 100%);
-            color:white;
+            background: #4a148c;  /* fallback for old browsers */
+           
         }
         .footer {
             position: fixed;
@@ -142,8 +146,7 @@
             padding: 10px;
             margin-top: 2px;
             text-align: center;
-            background-image: linear-gradient(-225deg, #473B7B 0%, #3584A7 51%, #30D2BE 100%);   
-        }
+            background: #4a148c;        }
     </style>
 
     <center><img src="{{ asset('images/design.png') }}" alt="" width="80%" height="70%" style="opacity:.1" ></center>

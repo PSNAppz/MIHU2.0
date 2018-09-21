@@ -25,10 +25,20 @@ class AdminController extends Controller
      */
     public function index()
     {
-        $load = sys_getloadavg();
-        return view('admin', compact('load'));
+        
+        return view('admin.index');
     }
 
+    /**
+     * Return load details as json.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function chart()
+    {
+        $load = sys_getloadavg();
+        return response()->json($load);
+    }
     /**
      * Show the form for creating a new resource.
      *
