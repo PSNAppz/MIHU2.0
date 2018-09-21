@@ -27,4 +27,6 @@ Route::resource('admin','AdminController');
 
 Route::resource('faq','FAQController');
 
+Route::get('chart','AdminController@chart');
+
 

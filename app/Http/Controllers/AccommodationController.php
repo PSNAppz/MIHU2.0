@@ -4,9 +4,16 @@ namespace App\Http\Controllers;
 
 use App\Accommodation;
 use Illuminate\Http\Request;
+use Session;
 
 class AccommodationController extends Controller
 {
+
+    public function __construct()
+     {
+         $this->middleware('auth',['only' => 'create','store','edit','update','destroy']);
+     }
+
     /**
      * Display a listing of the resource.
      *
@@ -14,7 +21,9 @@ class AccommodationController extends Controller
      */
     public function index()
     {
-        return view('accommodation.index');
+        $accommodations = Accommodation::orderBy('areaName')->get();
+        return view('accommodation.index')->withAccommodations($accommodations);
+        
     }
 
     /**
@@ -24,7 +33,7 @@ class AccommodationController extends Controller
      */
     public function create()
     {
-        //
+        return view('accommodation.add');
     }
 
     /**
@@ -35,7 +44,28 @@ class AccommodationController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // validate the data
+       $this->validate($request, array(
+               'gender'          => 'required|numeric',
+               'areaName'        => 'required|max:255',
+               'locationofAcc'   => 'required|max:255',
+               'category'        => 'required|max:255',
+               'coord'           => 'required|max:255',
+               'contact'         => 'required|numeric',
+               'isFull'          => 'required|numeric',
+           ));
+       // store in the database
+       $accommodations = new Accommodation;
+       $accommodations->gender = $request->gender;
+       $accommodations->areaName = $request->areaName;
+       $accommodations->locationofAcc = $request->locationofAcc;
+       $accommodations->category = $request->category;
+       $accommodations->isFull = $request->isFull;
+       $accommodations->coord = $request->coord;
+       $accommodations->contact = $request->contact;
+       $accommodations->save();
+       Session::flash('success', 'Accommodation Details successfully added!');
+       return redirect()->route('accommodation.index');
     }
 
     /**
@@ -57,7 +87,8 @@ class AccommodationController extends Controller
      */
     public function edit(Accommodation $accommodation)
     {
-        //
+        $acc = Accommodation::find($accommodation->id);
+        return view('accommodation.edit')->withAcc($acc);
     }
 
     /**
@@ -69,7 +100,20 @@ class AccommodationController extends Controller
      */
     public function update(Request $request, Accommodation $accommodation)
     {
-        //
+        $acc = Accommodation::find($accommodation->id);
+        $this->validate($request, array(
+            'gender'          => 'required|numeric',
+            'areaName'        => 'required|max:255',
+            'locationofAcc'   => 'required|max:255',
+            'category'          => 'required|max:255',
+            'coord'          => 'required|max:255',
+            'contact'          => 'required|numeric',
+            'isFull'          => 'required|numeric',
+            ));
+    $input = $request->all();
+    $acc->fill($input)->save();
+    Session::flash('success', 'Accommodation details successfully edited!');
+    return redirect()->route('accommodation.index');
     }
 
     /**
@@ -80,6 +124,9 @@ class AccommodationController extends Controller
      */
     public function destroy(Accommodation $accommodation)
     {
-        //
+        $acc = Accommodation::find($accommodation->id);
+        $acc->delete();
+        Session::flash('success', 'Accommodation details successfully removed!');
+        return redirect()->route('accommodation.index');
     }
 }
