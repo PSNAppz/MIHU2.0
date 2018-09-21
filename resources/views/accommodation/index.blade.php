@@ -1,6 +1,14 @@
 @extends('layouts.default') @section('content')
 <br> 
 <div class="container">
+  @if(Session::has('success'))
+    <div class="alert alert-success">
+        {{ Session::get('success') }}
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+    </div>
+@endif
    <script>
       $(document).ready( function () {
        $('#devotees').DataTable();
@@ -16,13 +24,22 @@
    </style>
    <h2 class="display-4" style="color:white;">Accommodation Details</h2>
    <br>
+
    <nav>
   <div class="nav nav-tabs" id="nav-tab" role="tablist">
     <a class="nav-item nav-link active" id="nav-devotee-tab" data-toggle="tab" href="#nav-devotee" role="tab" aria-controls="nav-devotee" aria-selected="true">Devotees</a>
     <a class="nav-item nav-link" id="nav-student-tab" data-toggle="tab" href="#nav-student" role="tab" aria-controls="nav-student" aria-selected="false">Students</a>
-    
   </div>
   <br>
+@if(!Auth::guest())
+  <a class="btn btn-primary " href="{{ url('/accommodation/create') }}" role="button" >Add New +</a>
+  <a  id="xlsf" href="{{ URL::to('downloadExcel/accommodation/xls') }}"><button class="btn btn-info">Download Excel xls</button></a>
+      <a id="xlsxf" href="{{ URL::to('downloadExcel/accommodation/xlsx') }}"><button class="btn btn-info">Download Excel xlsx</button></a>
+      <a id="csvf" href="{{ URL::to('downloadExcel/accommodation/csv') }}"><button class="btn btn-info">Download CSV</button></a>
+ @endif
+ <br>
+
+<br>
 </nav>
 <div class="tab-content" id="nav-tabContent">
   <div class="tab-pane fade show active" id="nav-devotee" role="tabpanel" aria-labelledby="nav-home-tab">
@@ -116,7 +133,6 @@
                               </tbody>
                             </table>
   </div>
-</div>
-               
+</div>              
 </div>
 @endsection

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Accommodation;
 use Illuminate\Http\Request;
+use Session;
 
 class AccommodationController extends Controller
 {
@@ -63,7 +64,7 @@ class AccommodationController extends Controller
        $accommodations->coord = $request->coord;
        $accommodations->contact = $request->contact;
        $accommodations->save();
-       $request->session()->flash('success', 'Accommodation Details successfully added!');
+       Session::flash('success', 'Accommodation Details successfully added!');
        return redirect()->route('accommodation.index');
     }
 
@@ -86,7 +87,7 @@ class AccommodationController extends Controller
      */
     public function edit(Accommodation $accommodation)
     {
-        $acc = Accommodation::find($accommodation);
+        $acc = Accommodation::find($accommodation->id);
         return view('accommodation.edit')->withAcc($acc);
     }
 
@@ -99,7 +100,20 @@ class AccommodationController extends Controller
      */
     public function update(Request $request, Accommodation $accommodation)
     {
-        //
+        $acc = Accommodation::find($accommodation->id);
+        $this->validate($request, array(
+            'gender'          => 'required|numeric',
+            'areaName'        => 'required|max:255',
+            'locationofAcc'   => 'required|max:255',
+            'category'          => 'required|max:255',
+            'coord'          => 'required|max:255',
+            'contact'          => 'required|numeric',
+            'isFull'          => 'required|numeric',
+            ));
+    $input = $request->all();
+    $acc->fill($input)->save();
+    Session::flash('success', 'Accommodation details successfully edited!');
+    return redirect()->route('accommodation.index');
     }
 
     /**
@@ -110,6 +124,9 @@ class AccommodationController extends Controller
      */
     public function destroy(Accommodation $accommodation)
     {
-        //
+        $acc = Accommodation::find($accommodation->id);
+        $acc->delete();
+        Session::flash('success', 'Accommodation details successfully removed!');
+        return redirect()->route('accommodation.index');
     }
 }

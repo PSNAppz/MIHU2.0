@@ -65,6 +65,12 @@
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="/" style="color:black;">
+                                        Home
+                                    </a>
+                                    <a class="dropdown-item" href="/admin" style="color:black;">
+                                        Dashboard
+                                    </a>
                                     <a class="dropdown-item" href="{{ route('logout') }}" style="color:black;"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
@@ -75,9 +81,7 @@
                                         @csrf
                                     </form>
 
-                                    <a class="dropdown-item" href="/admin" style="color:black;">
-                                        Dashboard
-                                    </a>
+                                    
                                 </div>
 
                                     

@@ -1,11 +1,14 @@
 @extends('layouts.default') @section('content')
     <br> 
-    @if (session('status'))
-    <div class="alert alert-success" role="alert">
-        {{ session('status') }}
+   
+  <div class="container">
+    @if($errors->any())
+    <div class="alert alert-danger">
+        @foreach($errors->all() as $error)
+            <p>{{ $error }}</p>
+        @endforeach
     </div>
     @endif
-  <div class="container">
         <h1 class="display-4" style="color:white;">Add new accommodation details</h1>
             <div class="col-sm">
                     {!! Form::open(array('route' => 'accommodation.store','data-parsley-validate' => '')) !!}
