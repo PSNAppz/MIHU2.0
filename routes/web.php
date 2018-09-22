@@ -29,4 +29,8 @@ Route::resource('faq','FAQController');
 
 Route::get('chart','AdminController@chart');
 
+Route::get('/admin/clearlogs', 'HomeController@destroy');
 
+//Excel functions
+Route::get('downloadExcel/{database}/{type}', 'ExcelController@downloadExcel');
+Route::post('importExcel/{database}', 'ExcelController@importExcel');
