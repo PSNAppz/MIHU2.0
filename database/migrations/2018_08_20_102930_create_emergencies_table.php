@@ -15,6 +15,11 @@ class CreateEmergenciesTable extends Migration
     {
         Schema::create('emergencies', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('name');
+            $table->string('contactNum');
+            $table->string('category');
+            $table->string('place');
+            $table->boolean('available')->default(0);
             $table->timestamps();
         });
     }
