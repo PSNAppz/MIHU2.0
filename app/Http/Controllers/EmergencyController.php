@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Emergency;
 use Illuminate\Http\Request;
+use Session;
 
 class EmergencyController extends Controller
 {
@@ -12,9 +13,14 @@ class EmergencyController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function __construct(){
+        $this->middleware('auth',['only' => 'create','store','edit','update','destroy']);
+    }
+
     public function index()
     {
-        return view('emergency.index');
+        $emergency = Emergency::orderBy('category')->get();
+        return view('emergency.index')->withEmergency($emergency);
     }
 
     /**
@@ -24,7 +30,7 @@ class EmergencyController extends Controller
      */
     public function create()
     {
-        //
+        return view('emergency.add');
     }
 
     /**
@@ -35,7 +41,24 @@ class EmergencyController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validata($request, array(
+            'id' => 'required|numeric',
+            'name' => 'required|max:255',
+            'contactNum' => 'required|numeric',
+            'category' => 'required|max:255',
+            'place' => 'required|max:255',
+            'available' => 'required|numeric'
+        ));
+
+        $emergencies = new Emergency;
+        $emergencies->id = $request->id;
+        $emergencies->name = $request->name;
+        $emergencyies->contactNum = $request->contactNum;
+        $emergencies->place = $request->place;
+        $emergencies->available = $request->available;
+        $emergencies->save();
+        Session::flash('success', 'Emergency Details successfully added!');
+        return redirect()->route('emergency.index');
     }
 
     /**
@@ -57,7 +80,8 @@ class EmergencyController extends Controller
      */
     public function edit(Emergency $emergency)
     {
-        //
+        $cont = Emergency::find($emergency->id);
+        return view('emergency.edit')->withCont($cont);
     }
 
     /**
@@ -69,7 +93,19 @@ class EmergencyController extends Controller
      */
     public function update(Request $request, Emergency $emergency)
     {
-        //
+        $cont = Emergency::find($emergency->id);
+        $this->validata($request, array(
+            'id' => 'required|numeric',
+            'name' => 'required|max:255',
+            'contactNum' => 'required|numeric',
+            'category' => 'required|max:255',
+            'place' => 'required|max:255',
+            'available' => 'required|numeric'
+        ));
+        $input = $request->all();
+        $cont->fill(input)->save();
+        Session::flash('success', 'Emergency details successfully edited!');
+        return redirect()->route('emergency.index');
     }
 
     /**
@@ -80,6 +116,9 @@ class EmergencyController extends Controller
      */
     public function destroy(Emergency $emergency)
     {
-        //
+        $cont = Emergency::find($emergency->id);
+        $cont->delete();
+        Session::flash('success', 'Emergency Details successfully removed');
+        return redirect()->route('emergency.index');
     }
 }
