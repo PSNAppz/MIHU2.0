@@ -15,6 +15,7 @@ class ExcelCOntroller extends Controller{
         	$this->middleware('auth');
     }
     public function downloadExcel($database,$type){
+
     		if($database=="accommodations"){
     		$data = Accommodation::get()->toArray();
     		return Excel::create('AccommodationMIHU', function($excel) use ($data) {
@@ -23,6 +24,88 @@ class ExcelCOntroller extends Controller{
     				$sheet->fromArray($data);
     	        });
     		})->download($type);
+            }
+
+            if($database=="transport"){
+    		$data = Transportation::get()->toArray();
+    		return Excel::create('TransportationMIHU', function($excel) use ($data) {
+    			$excel->sheet('mySheet', function($sheet) use ($data)
+    	        {
+    				$sheet->fromArray($data);
+    	        });
+    		})->download($type);
+            }
+            if($database=="seva"){
+    		$data = Seva::get()->toArray();
+    		return Excel::create('TransportationMIHU', function($excel) use ($data) {
+    			$excel->sheet('mySheet', function($sheet) use ($data)
+    	        {
+    				$sheet->fromArray($data);
+    	        });
+    		})->download($type);
+            }
+            if($database=="darshan"){
+    		$data = Darshan::get()->toArray();
+    		return Excel::create('DarshanMIHU', function($excel) use ($data) {
+    			$excel->sheet('mySheet', function($sheet) use ($data)
+    	        {
+    				$sheet->fromArray($data);
+    	        });
+    		})->download($type);
+            }
+            if($database=="security"){
+    		$data = Security::get()->toArray();
+    		return Excel::create('SecurityMIHU', function($excel) use ($data) {
+    			$excel->sheet('mySheet', function($sheet) use ($data)
+    	        {
+    				$sheet->fromArray($data);
+    	        });
+    		})->download($type);
+            }
+            if($database=="specialevent"){
+            $data = SpecialEvent::get()->toArray();
+            return Excel::create('SpecialeventsMIHU', function($excel) use ($data) {
+                $excel->sheet('mySheet', function($sheet) use ($data)
+                {
+                    $sheet->fromArray($data);
+                });
+            })->download($type);
+            }
+            if($database=="food"){
+            $data = Food::get()->toArray();
+            return Excel::create('FoodMIHU', function($excel) use ($data) {
+                $excel->sheet('mySheet', function($sheet) use ($data)
+                {
+                    $sheet->fromArray($data);
+                });
+            })->download($type);
+            }
+            if($database=="coordinator"){
+            $data = Coordinator::get()->toArray();
+            return Excel::create('CoordinatorsMIHU', function($excel) use ($data) {
+                $excel->sheet('mySheet', function($sheet) use ($data)
+                {
+                    $sheet->fromArray($data);
+                });
+            })->download($type);
+            }
+            if($database=="volunteer"){
+            $data = Volunteer::get()->toArray();
+            return Excel::create('VolunteersMIHU', function($excel) use ($data) {
+                $excel->sheet('mySheet', function($sheet) use ($data)
+                {
+                    $sheet->fromArray($data);
+                });
+            })->download($type);
+            }
+            if($database=="staff"){
+            $data = StaffVolunteer::get()->toArray();
+            return Excel::create('StaffMIHU', function($excel) use ($data) {
+                $excel->sheet('mySheet', function($sheet) use ($data)
+                {
+                    $sheet->fromArray($data);
+                });
+            })->download($type);
             }
     }
 
