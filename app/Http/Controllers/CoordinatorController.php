@@ -7,6 +7,7 @@ use App\StaffVolunteer;
 use Illuminate\Http\Request;
 use App\LogEngine;
 use Session;
+use Auth;
 
 class CoordinatorController extends Controller
 {
@@ -62,7 +63,7 @@ class CoordinatorController extends Controller
         $log->name=Auth::user()->name;
         $log->action="Coordinator";
         $log->actionval = 1;
-        $log->detailed_data = $acoordinators;
+        $log->detailed_data = $coordinators;
         $log->save();
        $coordinators->save();
        $request->session()->flash('success', 'Coordinator Details successfully added!');
