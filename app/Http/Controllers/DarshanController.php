@@ -41,13 +41,13 @@ class DarshanController extends Controller
      */
     public function store(Request $request)
     {
-        $this -> validate($request, [
-            'darshan_time' => 'required|max:255',
+        $this->validate($request, array(
             'date' => 'required|max:255',
+            'darshan_time' => 'required|max:255',
             'token_loc' => 'required|max:255',
             'token_time' => 'required|max:255'
-        ]);
-        $darshan = Darshan::all();
+        ));
+        $darshan = new Darshan();
         $darshan->darshan_time = $request->darshan_time;
         $darshan->date = $request->date;
         $darshan->token_loc = $request->token_loc;
@@ -78,7 +78,7 @@ class DarshanController extends Controller
     public function edit(Darshan $darshan)
     {
         $darsh = Darshan::find($darshan->id);
-        return view('emergency.edit')->withDarshan($darsh);
+        return view('darshan.edit')->withDarsh($darsh);
     }
 
     /**
@@ -92,8 +92,8 @@ class DarshanController extends Controller
     {
         $darsh = Darshan::find($darshan->id);
         $this -> validate($request, [
-            'darshan_time' => 'required|max:255',
             'date' => 'required|max:255',
+            'darshan_time' => 'required|max:255',
             'token_loc' => 'required|max:255',
             'token_time' => 'required|max:255'
         ]);
@@ -111,7 +111,7 @@ class DarshanController extends Controller
      */
     public function destroy(Darshan $darshan)
     {
-        $darsh = Darshan::find($darshand->id);
+        $darsh = Darshan::find($darshan->id);
         $darsh->delete();
         Session::flash('success', 'Darshan details has been removed!');
         return redirect()->route('darshan.index');

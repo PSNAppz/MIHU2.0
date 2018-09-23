@@ -6,5 +6,5 @@ use Illuminate\Database\Eloquent\Model;
 
 class Darshan extends Model
 {
-    protected $fillable = ['date', 'darshan_time', 'token_loc'];
+    protected $fillable = ['darshan_time','date','token_loc', 'token_time'];
 }
