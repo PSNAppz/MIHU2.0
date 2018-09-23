@@ -29,6 +29,8 @@ Route::resource('faq','FAQController');
 
 Route::resource('volunteer','VolunteerController');
 
+Route::resource('coordinator','CoordinatorController');
+
 Route::get('chart','AdminController@chart');
 
 Route::get('/admin/clearlogs', 'HomeController@destroy');
