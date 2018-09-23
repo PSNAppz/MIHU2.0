@@ -16,7 +16,6 @@ Route::get('/', function () {
 });
 Auth::routes();
 
-
 Route::get('/register',function(){
 	return view('errors.404');
 });
