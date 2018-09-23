@@ -19,7 +19,7 @@ class EmergencyController extends Controller
 
     public function index()
     {
-        $emergency = Emergency::orderBy('category')->get();
+        $emergency = Emergency::orderBy('service')->get();
         return view('emergency.index')->withEmergency($emergency);
     }
 
@@ -42,23 +42,18 @@ class EmergencyController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, array(
-            'id' => 'required|numeric',
-            'name' => 'required|max:255',
-            'contactNum' => 'required|numeric',
-            'category' => 'required|max:255',
-            'place' => 'required|max:255',
-            'available' => 'required|numeric'
-        ));
-
-        $emergencies = new Emergency;
-        $emergencies->id = $request->id;
-        $emergencies->name = $request->name;
-        $emergencyies->contactNum = $request->contactNum;
-        $emergencies->place = $request->place;
-        $emergencies->available = $request->available;
-        $emergencies->save();
+            'service'      => 'required|max:255',
+           'name'      => 'required|max:255',
+           'contact'  => 'required|max:255',
+       ));
+        // store in the database
+        $emergency = new Emergency;
+        $emergency->service = $request->service;
+        $emergency->name = $request->name;
+        $emergency->contact = $request->contact;
+        $emergency->save();
         Session::flash('success', 'Emergency Details successfully added!');
-        return redirect()->route('emergency.index');
+    return redirect()->route('emergency.index');
     }
 
     /**
