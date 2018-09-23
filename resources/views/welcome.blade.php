@@ -85,12 +85,12 @@
             </div>
 
             <div class="col-sm">
-               <a href="/volunteer" style="text-decoration: none;">
+               <a href="/coordinator" style="text-decoration: none;">
                     <div class="card" id="card_gradient4" style="width: 18rem;text-align: center;">
                             <div class="card-body">
                                 <i class="fa fa-user-plus" style="font-size:40px;color:white"></i>
-                                <h5 class="card-title" style="font-weight: bold;color: white;font-family: 'Fugaz One', cursive;font-size: 25px">Volunteers</h5>
-                                <h6 class="card-subtitle mb-2 text" style="color: white;">Volunteers of Amritavarsham 65</h6>
+                                <h5 class="card-title" style="font-weight: bold;color: white;font-family: 'Fugaz One', cursive;font-size: 25px">Coordinators</h5>
+                                <h6 class="card-subtitle mb-2 text" style="color: white;">Coordinators of Amritavarsham 65</h6>
                             </div>
                     </div>
                </a>

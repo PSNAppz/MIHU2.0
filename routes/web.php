@@ -30,6 +30,10 @@ Route::resource('faq','FAQController');
 
 Route::resource('volunteer','VolunteerController');
 
+Route::resource('coordinator','CoordinatorController');
+
+ROute::resource('staffvolunteer','StaffVolunteerController');
+
 Route::get('chart','AdminController@chart');
 
 Route::get('/admin/clearlogs', 'HomeController@destroy');
