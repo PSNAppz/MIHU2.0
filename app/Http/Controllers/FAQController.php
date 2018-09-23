@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\FAQ;
 use Illuminate\Http\Request;
+use Session;
+
 
 class FAQController extends Controller
 {
@@ -12,9 +14,14 @@ class FAQController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function __construct(){
+        $this->middleware('auth',['only' => 'create','store','edit','update','destroy']);
+    }
+        
     public function index()
     {
-        return view('faq.index');
+        $comment = FAQ::all();
+        return view('faq.index')->withComment($comment);
     }
 
     /**
@@ -24,7 +31,7 @@ class FAQController extends Controller
      */
     public function create()
     {
-        //
+        return view('faq.add');
     }
 
     /**
@@ -35,7 +42,18 @@ class FAQController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, array(
+            'id' => 'required|numeric',
+            'question' => 'required|max:255',
+            'answer' => 'required|max:255'
+        ));
+
+        $comment = new FAQ();
+        $comment->id = $request->id;
+        $comment->question = $request->question;
+        $comment->answer = $request->answer;
+        Session::flash('sucess', 'New Question Added');
+        return redirect()->route('faq.index');
     }
 
     /**
@@ -57,7 +75,8 @@ class FAQController extends Controller
      */
     public function edit(FAQ $fAQ)
     {
-        //
+        $comment = FAQ::find($fAQ->id);
+        return view('faq.edit')->withComment($comment);
     }
 
     /**
@@ -69,7 +88,16 @@ class FAQController extends Controller
      */
     public function update(Request $request, FAQ $fAQ)
     {
-        //
+        $comment = FAQ::find($fAQ->id);
+        $this->validate($request, array(
+            'id' => 'required|numeric',
+            'question' => 'required|max:255',
+            'answer' => 'required|max:255'
+        ));
+        $input = $request->all;
+        $comment->fill($input)->save();
+        Session::flash('success', 'Question Updated');
+        return redirect()->route('faq.index');
     }
 
     /**
@@ -80,6 +108,9 @@ class FAQController extends Controller
      */
     public function destroy(FAQ $fAQ)
     {
-        //
+        $comment = FAQ::find($fAQ->id);
+        $commment->delete();
+        Session::flash('success', 'Question has been successfully removed');
+        return redirect()->route('faq.index');
     }
 }

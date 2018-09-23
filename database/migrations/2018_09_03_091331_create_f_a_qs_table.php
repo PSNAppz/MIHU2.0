@@ -15,6 +15,8 @@ class CreateFAQsTable extends Migration
     {
         Schema::create('f_a_qs', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('question', 255);
+            $table->longtext('answer')->nullable();
             $table->timestamps();
         });
     }
