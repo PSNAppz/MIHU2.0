@@ -42,7 +42,7 @@ class EmergencyController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, array(
-           'service'      => 'required|max:255',
+            'service'      => 'required|max:255',
            'name'      => 'required|max:255',
            'contact'  => 'required|max:255',
        ));
@@ -98,7 +98,7 @@ class EmergencyController extends Controller
             'available' => 'required|numeric'
         ));
         $input = $request->all();
-        $cont->fill(input)->save();
+        $cont->fill($input)->save();
         Session::flash('success', 'Emergency details successfully edited!');
         return redirect()->route('emergency.index');
     }
