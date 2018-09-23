@@ -19,7 +19,7 @@
       {{ Form::text('seva',null,array('class'=> 'form-control','required'=> ''))}}
       <center>
          {{ Form::submit('Add Details',array('class'=>'btn btn-success ','style' =>'margin-top:20px;'))}}
-         <a class="btn btn-danger " href="{{ url('/staffvolunteer') }}" role="button" style="margin-top:20px">Cancel</a>
+         <a class="btn btn-danger " href="{{ url('/coordinator') }}" role="button" style="margin-top:20px">Cancel</a>
       </center>
       {!! Form::close() !!}
    </div>
