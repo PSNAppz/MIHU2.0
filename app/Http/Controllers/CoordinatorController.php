@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Coordinator;
+use App\StaffVolunteer;
 use Illuminate\Http\Request;
 use Session;
 
@@ -21,7 +22,8 @@ class CoordinatorController extends Controller
     public function index()
     {
         $coordinators = Coordinator::get();
-        return view('coordinator.index')->withCoordinators($coordinators);
+        $staff = StaffVolunteer::get();
+        return view('coordinator.index')->withCoordinators($coordinators)->withStaff($staff);
     }
 
     /**

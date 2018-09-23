@@ -8,7 +8,7 @@
       @endforeach
    </div>
    @endif
-   <h1 class="display-4" style="color:white;">Add new volunteer details</h1>
+   <h1 class="display-4" style="color:white;">Add new staff coordinator details</h1>
    <div class="col-sm">
       {!! Form::open(array('route' => 'staffvolunteer.store','data-parsley-validate' => '')) !!}
       {{ Form::label('department', 'Department:') }}
@@ -19,7 +19,7 @@
       {{ Form::text('seva',null,array('class'=> 'form-control','required'=> ''))}}
       <center>
          {{ Form::submit('Add Details',array('class'=>'btn btn-success ','style' =>'margin-top:20px;'))}}
-         <a class="btn btn-danger " href="{{ url('/staffvolunteer') }}" role="button" style="margin-top:20px">Cancel</a>
+         <a class="btn btn-danger " href="{{ url('/coordinator') }}" role="button" style="margin-top:20px">Cancel</a>
       </center>
       {!! Form::close() !!}
    </div>
