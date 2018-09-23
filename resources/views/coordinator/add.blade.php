@@ -8,13 +8,13 @@
       @endforeach
    </div>
    @endif
-   <h1 class="display-4" style="color:white;">Add new volunteer details</h1>
+   <h1 class="display-4" style="color:white;">Add new Coordinator details</h1>
    <div class="col-sm">
       {!! Form::open(array('route' => 'coordinator.store','data-parsley-validate' => '')) !!}
-         {{ Form::label('department', 'Department:') }}
-         {{ Form::text('department',null,array('class'=> 'form-control','required' => ''))}}
          {{ Form::label('name','Name:')}}
          {{ Form::text('name',null,array('class'=> 'form-control','required' => ''))}}
+         {{ Form::label('department', 'Department:') }}
+         {{ Form::text('department',null,array('class'=> 'form-control','required' => ''))}}
          {{ Form::label('seva','Seva:')}}
          {{ Form::text('seva',null,array('class'=> 'form-control','required'=> ''))}}
          {{ Form::label('contact','Contact No:')}}

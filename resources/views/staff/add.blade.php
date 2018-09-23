@@ -8,7 +8,7 @@
       @endforeach
    </div>
    @endif
-   <h1 class="display-4" style="color:white;">Add new volunteer details</h1>
+   <h1 class="display-4" style="color:white;">Add new staff coordinator details</h1>
    <div class="col-sm">
       {!! Form::open(array('route' => 'staffvolunteer.store','data-parsley-validate' => '')) !!}
       {{ Form::label('department', 'Department:') }}
