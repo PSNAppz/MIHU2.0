@@ -9,30 +9,23 @@
          </button>
       </div>
       @endif
-        <center>
         <h1 class="display-1" style="color:white;">FAQs</h1>
+        @if(!Auth::guest())
+        <a class="btn btn-success btn-lg" href="{{ url('/faq/create') }}" role="button">Add a FAQ</a>
+        @endif <br><br>
         @foreach($comment as $comm)
-        <div class="accordion" id="accordion{{$comm->id}}">
-          <div class="card">
-            <div class="card-header" id="heading{{$comm->id}}">
-              <h5 class="mb-0">
-                <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapse{{$comm->id}}" aria-expanded="true" aria-controls="collapse{{$comm->id}}">
-                    {{$comm->question}}
-                </button>
-              </h5>
-              @if(!Auth::guest())
-            <a class="btn btn-warning" href="{{ route('faq.edit', $comment->id, '/edit')}}" role="button">Add answer</a>  
-            
-            @endif
-            </div>
-            <div id="collapse{{$comm->id}}" class="collapse text-white bg-info" aria-labelledby="heading{{$comm->id}}" data-parent="#accordion{{$comm->id}}">
-              <div class="card-body">
-                {{$comm->answer}}
-              </div>
-            </div>
-          </div>
+        <div class="alert alert-info" role="alert">
+          <h2>{{$comm->question}}
+          @if(!Auth::guest())
+              {{ Form::open(['method' => 'DELETE', 'route' => ['faq.destroy', $comm->id]]) }}
+                {{ Form::submit('Delete', ['class' => 'btn btn-danger']) }}
+              {{ Form::close() }}
+              
+          @endif
+        </h2>
+          <hr>
+          <h5>Answer: {{$comm->answer}}</h5>
         </div>
         @endforeach 
-        </center>
     </div>
 @endsection

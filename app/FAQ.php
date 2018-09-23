@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class FAQ extends Model
+class Faq extends Model
 {
     protected $fillable =['question', 'answer'];
 }

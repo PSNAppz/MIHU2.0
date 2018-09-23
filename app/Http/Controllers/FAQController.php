@@ -2,22 +2,17 @@
 
 namespace App\Http\Controllers;
 
-use App\FAQ;
+use App\Faq;
 use Illuminate\Http\Request;
 use Session;
 
-
-class FAQController extends Controller
+class FaqController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function __construct(){
-        $this->middleware('auth',['only' => 'create','store','edit','update','destroy']);
-    }
-        
     public function index()
     {
         $comment = FAQ::all();
@@ -32,6 +27,7 @@ class FAQController extends Controller
     public function create()
     {
         return view('faq.add');
+
     }
 
     /**
@@ -43,15 +39,14 @@ class FAQController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, array(
-            'id' => 'required|numeric',
             'question' => 'required|max:255',
             'answer' => 'required|max:255'
         ));
 
         $comment = new FAQ();
-        $comment->id = $request->id;
         $comment->question = $request->question;
         $comment->answer = $request->answer;
+        $comment->save();
         Session::flash('sucess', 'New Question Added');
         return redirect()->route('faq.index');
     }
@@ -59,10 +54,10 @@ class FAQController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\FAQ  $fAQ
+     * @param  \App\Faq  $faq
      * @return \Illuminate\Http\Response
      */
-    public function show(FAQ $fAQ)
+    public function show(Faq $faq)
     {
         //
     }
@@ -70,12 +65,12 @@ class FAQController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\FAQ  $fAQ
+     * @param  \App\Faq  $faq
      * @return \Illuminate\Http\Response
      */
-    public function edit(FAQ $fAQ)
+    public function edit(Faq $faq)
     {
-        $comment = FAQ::find($fAQ->id);
+        $comment = FAQ::find($faq->id);
         return view('faq.edit')->withComment($comment);
     }
 
@@ -83,12 +78,12 @@ class FAQController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\FAQ  $fAQ
+     * @param  \App\Faq  $faq
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, FAQ $fAQ)
+    public function update(Request $request, Faq $faq)
     {
-        $comment = FAQ::find($fAQ->id);
+        $comment = FAQ::find($faq->id);
         $this->validate($request, array(
             'id' => 'required|numeric',
             'question' => 'required|max:255',
@@ -103,14 +98,16 @@ class FAQController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\FAQ  $fAQ
+     * @param  \App\Faq  $faq
      * @return \Illuminate\Http\Response
      */
-    public function destroy(FAQ $fAQ)
+    public function destroy(Faq $faq)
     {
-        $comment = FAQ::find($fAQ->id);
-        $commment->delete();
-        Session::flash('success', 'Question has been successfully removed');
-        return redirect()->route('faq.index');
+        $comment = FAQ::where('id', $faq->id)->first();
+        if($comment != null){
+            $comment->delete();
+            Session::flash('success', 'Question has been successfully removed');
+            return redirect()->route('faq.index');
+        }
     }
 }
