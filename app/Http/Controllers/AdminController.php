@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Admin;
 use Illuminate\Http\Request;
+use App\LogEngine;
+
 
 class AdminController extends Controller
 {
@@ -25,8 +27,8 @@ class AdminController extends Controller
      */
     public function index()
     {
-        
-        return view('admin.index');
+        $logs = LogEngine::all();
+        return view('admin.index')->withLogs($logs);
     }
 
     /**

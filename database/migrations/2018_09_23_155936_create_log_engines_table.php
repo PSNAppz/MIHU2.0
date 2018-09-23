@@ -15,6 +15,13 @@ class CreateLogEnginesTable extends Migration
     {
         Schema::create('log_engines', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('user_id')->unsigned();
+            $table->foreign('user_id')->references('id')->on('users')
+            ->onDelete('cascade')->onUpdate('cascade');
+            $table->string('name');
+            $table->string('action');
+            $table->longtext('detailed_data')->nullable();
+            $table->integer('actionval');
             $table->timestamps();
         });
     }

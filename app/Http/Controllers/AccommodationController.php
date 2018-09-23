@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Accommodation;
 use Illuminate\Http\Request;
+use App\LogEngine;
+use Auth;
+
 use Session;
 
 class AccommodationController extends Controller
@@ -56,6 +59,7 @@ class AccommodationController extends Controller
            ));
        // store in the database
        $accommodations = new Accommodation;
+       $log = new LogEngine();
        $accommodations->gender = $request->gender;
        $accommodations->areaName = $request->areaName;
        $accommodations->locationofAcc = $request->locationofAcc;
@@ -63,6 +67,12 @@ class AccommodationController extends Controller
        $accommodations->isFull = $request->isFull;
        $accommodations->coord = $request->coord;
        $accommodations->contact = $request->contact;
+       $log->user_id=Auth::user()->id;
+       $log->name=Auth::user()->name;
+       $log->action="Accommodation";
+       $log->actionval = 1;
+       $log->detailed_data = $accommodations;
+       $log->save();
        $accommodations->save();
        Session::flash('success', 'Accommodation Details successfully added!');
        return redirect()->route('accommodation.index');
@@ -110,10 +120,17 @@ class AccommodationController extends Controller
             'contact'          => 'required|numeric',
             'isFull'          => 'required|numeric',
             ));
-    $input = $request->all();
-    $acc->fill($input)->save();
-    Session::flash('success', 'Accommodation details successfully edited!');
-    return redirect()->route('accommodation.index');
+        $input = $request->all();
+        $log = new LogEngine();
+        $log->user_id=Auth::user()->id;
+        $log->name=Auth::user()->name;
+        $log->action="Accommodation";
+        $log->actionval = 2;
+        $log->detailed_data = $acc;
+        $log->save();
+        $acc->fill($input)->save();
+        Session::flash('success', 'Accommodation details successfully edited!');
+        return redirect()->route('accommodation.index');
     }
 
     /**
@@ -125,6 +142,13 @@ class AccommodationController extends Controller
     public function destroy(Accommodation $accommodation)
     {
         $acc = Accommodation::find($accommodation->id);
+        $log = new LogEngine();
+        $log->user_id=Auth::user()->id;
+        $log->name=Auth::user()->name;
+        $log->action="Accommodation";
+        $log->actionval = 3;
+        $log->detailed_data = $acc;
+        $log->save();
         $acc->delete();
         Session::flash('success', 'Accommodation details successfully removed!');
         return redirect()->route('accommodation.index');

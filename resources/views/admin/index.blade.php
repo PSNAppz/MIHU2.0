@@ -94,15 +94,25 @@ var chartData = {
     <div class="col-md-4">
             <div class="card" id="card_gradient2">
                 <div class="card-header"><i class="fa fa-file-text"></i> Logs</div>
-                <div class="card-body">
-                  @if(Auth::user()->name=="PSNAppZ")<th><a href="{{ URL::to('admin/clearlogs') }}"><button class="btn btn-danger">Clear Logs</button></a></th>@endif
-                    <hr>
+                <div class="card-body" style="overflow-y: auto;height: 400px;">
+                  @if(Auth::user()->name=="PSN")<th><a href="{{ URL::to('admin/clearlogs') }}"><button class="btn btn-danger">Clear Logs</button></a></th>@endif
+                    <br>
+                    @foreach($logs as $log)
                     <div class="alert alert-light" role="alert">
-                        {{ Auth()->user()->name }} <span class="badge badge-success">Uploaded</span> Accommodation details.
+                         <b>#{{$log->id}}</b>
+                         {{ $log->name}}
+                         @if($log->actionval == 1)
+                         <span class="badge badge-success">Added</span>
+                         @elseif($log->actionval == 2)
+                         <span class="badge badge-warning">Updated</span>
+                         @elseif($log->action == "Cleared Logs")
+                         <span class="badge badge-info">Cleared</span>
+                         @else
+                         <span class="badge badge-danger">Deleted</span>
+                         @endif
+                          {{$log->action}} <br><i>Time : {{$log->created_at}}</i>
                     </div>
-                    <div class="alert alert-light" role="alert">
-                        {{ Auth()->user()->name }} <span class="badge badge-danger">Removed</span> Security details.
-                    </div>
+                    @endforeach
                 </div>
             </div>
         </div>
