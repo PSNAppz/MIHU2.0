@@ -11,7 +11,6 @@
    <h1 class="display-4" style="color:white;">Add new volunteer details</h1>
    <div class="col-sm">
       {{ Form::model($cord, array('route' => array('coordinator.update', $cord->id),'data-parsley-validate' => '', 'method' => 'PUT')) }}
-      {{ Form::model($cord, array('route' => array('coordinator.update', $cord->id),'data-parsley-validate' => '', 'method' => 'PUT')) }}
         {{ Form::label('department', 'Department:') }}
         {{ Form::text('department',$cord->department,array('class'=> 'form-control','required' => ''))}}
         {{ Form::label('name','Name:')}}
