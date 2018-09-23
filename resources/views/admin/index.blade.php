@@ -124,7 +124,7 @@ var chartData = {
                 <div class="card-body">
                 <form>
                   <h5>Select data location</h5>
-                    <input type="radio" name="redirect" onClick="changeVal(1)"><span> Accommodation</span><br>
+                    <input type="radio" name="redirect"  onClick="changeVal(1)"><span> Accommodation</span><br>
                     <input type="radio" name="redirect"  onClick="changeVal(2)"><span> Transportation</span><br>
                     <input type="radio" name="redirect"  onClick="changeVal(3)"><span> Darshan</span><br>
                     <input type="radio" name="redirect"  onClick="changeVal(4)"><span> Security</span><br>
