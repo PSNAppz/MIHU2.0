@@ -8,15 +8,17 @@
       @endforeach
    </div>
    @endif
-   <h1 class="display-4" style="color:white;">Editvolunteer details</h1>
+   <h1 class="display-4" style="color:white;">Add new Staff Volunteer details</h1>
    <div class="col-sm">
-      {{ Form::model($staff, array('route' => array('staffvolunteer.update', $staff->id),'data-parsley-validate' => '', 'method' => 'PUT')) }}
-      {{ Form::label('department', 'Department:') }}
-      {{ Form::text('department',$staff->department,array('class'=> 'form-control','required' => ''))}}
+      {{ Form::model($staff, array('route' => array('staff.update', $staff->id),'data-parsley-validate' => '', 'method' => 'PUT')) }}
       {{ Form::label('name','Name:')}}
       {{ Form::text('name',$staff->name,array('class'=> 'form-control','required' => ''))}}
+      {{ Form::label('department', 'Department:') }}
+      {{ Form::text('department',$staff->department,array('class'=> 'form-control','required' => ''))}}
       {{ Form::label('seva','Seva:')}}
       {{ Form::text('seva',$staff->seva,array('class'=> 'form-control','required'=> ''))}}
+      {{ Form::label('contact', 'Contact:') }}
+      {{ Form::text('contact',$staff->contact,array('class'=> 'form-control'))}}
       <center>
          {{ Form::submit('Edit Details',array('class'=>'btn btn-success ','style' =>'margin-top:20px;'))}}
          <a class="btn btn-danger " href="{{ url('/coordinator') }}" role="button" style="margin-top:20px">Cancel</a>

@@ -257,6 +257,26 @@ function changeVal(value){
         var x = document.getElementById("import");
         x.action="{{ URL::to('importExcel/volunteer') }}";
     }
+    if(a == 11){
+        var csv = document.getElementById("csvf");
+        var xls = document.getElementById("xlsf");
+        var xlsx = document.getElementById("xlsxf");
+        csv.href = "{{ URL::to('downloadExcel/staffvol/csv') }}";
+        xls.href = "{{ URL::to('downloadExcel/staffvol/xls') }}";
+        xlsx.href = "{{ URL::to('downloadExcel/staffvol/xlsx') }}";
+        var x = document.getElementById("import");
+        x.action="{{ URL::to('importExcel/staffvol') }}";
+    }
+    if(a == 12){
+        var csv = document.getElementById("csvf");
+        var xls = document.getElementById("xlsf");
+        var xlsx = document.getElementById("xlsxf");
+        csv.href = "{{ URL::to('downloadExcel/others/csv') }}";
+        xls.href = "{{ URL::to('downloadExcel/others/xls') }}";
+        xlsx.href = "{{ URL::to('downloadExcel/others/xlsx') }}";
+        var x = document.getElementById("import");
+        x.action="{{ URL::to('importExcel/others') }}";
+    }
 }
 </script>
 </body>
