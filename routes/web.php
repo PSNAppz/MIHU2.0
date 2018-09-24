@@ -19,6 +19,7 @@ Auth::routes();
 Route::get('/register',function(){
 	return view('errors.404');
 });
+Route::get('/clearlogs', 'LogEngineController@destroy');
 
 Route::resource('darshan', 'DarshanController');
 
@@ -40,7 +41,6 @@ ROute::resource('staffvolunteer','StaffVolunteerController');
 
 Route::get('chart','AdminController@chart');
 
-Route::get('/admin/clearlogs', 'HomeController@destroy');
 
 
 //Excel functions

@@ -33,9 +33,9 @@
       <div class="tab-pane fade show active" id="nav-darshtiming" role="tabpanel" aria-labelledby="nav-darshtiming-tab">
             @if(!Auth::guest())
             <a class="btn btn-primary " href="{{ url('/darshan/create') }}" role="button" >Add New +</a>
-            <a  id="xlsf" href="{{ URL::to('downloadExcel/accommodations/xls') }}"><button class="btn btn-info">Download Excel xls</button></a>
-            <a id="xlsxf" href="{{ URL::to('downloadExcel/accommodations/xlsx') }}"><button class="btn btn-info">Download Excel xlsx</button></a>
-            <a id="csvf" href="{{ URL::to('downloadExcel/accommodations/csv') }}"><button class="btn btn-info">Download CSV</button></a>
+            <a  id="xlsf" href="{{ URL::to('downloadExcel/darshan/xls') }}"><button class="btn btn-info">Download Excel xls</button></a>
+            <a id="xlsxf" href="{{ URL::to('downloadExcel/darshan/xlsx') }}"><button class="btn btn-info">Download Excel xlsx</button></a>
+            <a id="csvf" href="{{ URL::to('downloadExcel/darshan/csv') }}"><button class="btn btn-info">Download CSV</button></a>
             @endif
             <br>
             <br>

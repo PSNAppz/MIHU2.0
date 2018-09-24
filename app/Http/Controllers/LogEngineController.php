@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use App\LogEngine;
 use Illuminate\Http\Request;
+use DB;
+use Session;
+use Auth;
 
 class LogEngineController extends Controller
 {
@@ -28,6 +31,14 @@ class LogEngineController extends Controller
      */
     public function destroy(LogEngine $logEngine)
     {
-        //
+      DB::table('log_engines')->truncate();
+      $log = new LogEngine();
+      $log->user_id=Auth::user()->id;
+      $log->name=Auth::user()->name;
+      $log->action="Logs";
+      $log->actionval = 4;
+      $log->save();
+      Session::flash('success', 'Logs Cleared');
+      return redirect()->back();
     }
 }
