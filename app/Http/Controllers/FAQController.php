@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Faq;
 use Illuminate\Http\Request;
 use Session;
+use App\LogEngine;
+use Auth;
 
 class FaqController extends Controller
 {
@@ -46,6 +48,13 @@ class FaqController extends Controller
         $comment = new FAQ();
         $comment->question = $request->question;
         $comment->answer = $request->answer;
+        $log = new LogEngine();
+        $log->user_id=Auth::user()->id;
+        $log->name=Auth::user()->name;
+        $log->action="FAQ";
+        $log->actionval = 1;
+        $log->detailed_data = $comment;
+        $log->save();
         $comment->save();
         Session::flash('sucess', 'New Question Added');
         return redirect()->route('faq.index');
@@ -90,6 +99,13 @@ class FaqController extends Controller
             'answer' => 'required|max:255'
         ));
         $input = $request->all;
+        $log = new LogEngine();
+        $log->user_id=Auth::user()->id;
+        $log->name=Auth::user()->name;
+        $log->action="FAQ";
+        $log->actionval = 2;
+        $log->detailed_data = $comment;
+        $log->save();
         $comment->fill($input)->save();
         Session::flash('success', 'Question Updated');
         return redirect()->route('faq.index');
@@ -103,11 +119,16 @@ class FaqController extends Controller
      */
     public function destroy(Faq $faq)
     {
-        $comment = FAQ::where('id', $faq->id)->first();
-        if($comment != null){
-            $comment->delete();
-            Session::flash('success', 'Question has been successfully removed');
-            return redirect()->route('faq.index');
-        }
+        $comment = FAQ::find($faq->id);
+        $log = new LogEngine();
+        $log->user_id=Auth::user()->id;
+        $log->name=Auth::user()->name;
+        $log->action="FAQ";
+        $log->actionval = 3;
+        $log->detailed_data = $comment;
+        $log->save();
+        $comment->delete();
+        Session::flash('success', 'Question has been successfully removed');
+        return redirect()->route('faq.index');
     }
 }

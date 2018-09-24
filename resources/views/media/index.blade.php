@@ -11,7 +11,8 @@
 </style>
 <h3 style="color:aliceblue;text-align:center"><b>News & Media</b></h3>
 <div class="container">
-    <center>
+    
+    <!-- <center>
         <div class="row">
         <div class="col-sm-4 col-md-4">
             <div class="p-3 mb-2 bg-light text-dark">
@@ -67,7 +68,7 @@
             </div>
         </div>
     </div>
-    </center>
+    </center> -->
 </div>
     <!--<div class="footer-basic">
         <footer>
