@@ -8,6 +8,7 @@ use App\StaffVolunteer;
 use App\Volunteer;
 use App\AshramVolunteers;
 use App\Coordinator;
+use App\Staff;
 
 use Maatwebsite\Excel\Facades\Excel;
 use Illuminate\Support\Facades\Input;
@@ -85,7 +86,7 @@ class ExcelCOntroller extends Controller{
                 });
             })->download($type);
             }
-            if($database=="coordinator"){
+            if($database=="coordinators"){
             $data = Coordinator::get()->toArray();
             return Excel::create('CoordinatorsMIHU', function($excel) use ($data) {
                 $excel->sheet('mySheet', function($sheet) use ($data)
@@ -112,8 +113,17 @@ class ExcelCOntroller extends Controller{
                 });
             })->download($type);
             }
+            if($database=="staffvol"){
+            $data = Staff::get()->toArray();
+            return Excel::create('StaffVolMIHU', function($excel) use ($data) {
+                $excel->sheet('mySheet', function($sheet) use ($data)
+                {
+                    $sheet->fromArray($data);
+                });
+            })->download($type);
+            }
             if($database=="ashramvol"){
-            $data = StaffVolunteer::get()->toArray();
+            $data = AshramVolunteers::get()->toArray();
             return Excel::create('Ashram Volunteers', function($excel) use ($data) {
                 $excel->sheet('mySheet', function($sheet) use ($data)
                 {
@@ -196,11 +206,29 @@ class ExcelCOntroller extends Controller{
                 })->get();
                 if(!empty($data) && $data->count()){
                     foreach ($data as $key => $value) {
-                        StaffVolunteer::create([
+                        Staff::create([
                         'name' => $value->name,
                         'seva' => $value->seva,
                         'department' => $value->department,
                         'contact' => $value->contact
+                    ]);
+                    }
+                    dd('Insert Record successfully.');
+-                        redirect()->route('home');
+                }
+            }
+        }
+        elseif($database == 'staff'){
+            if(Input::hasFile('import_file')){
+                $path = Input::file('import_file')->getRealPath();
+                $data = Excel::load($path, function($reader) {
+                })->get();
+                if(!empty($data) && $data->count()){
+                    foreach ($data as $key => $value) {
+                        StaffVolunteer::create([
+                        'name' => $value->name,
+                        'seva' => $value->seva,
+                        'department' => $value->department,
                     ]);
                     }
                     dd('Insert Record successfully.');

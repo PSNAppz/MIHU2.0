@@ -141,7 +141,7 @@ var chartData = {
                     <input type="radio" name="redirect"  onClick="changeVal(5)"><span> Special Event</span><br>
                     <input type="radio" name="redirect"  onClick="changeVal(6)"><span> Food</span><br>
                     <input type="radio" name="redirect"  onClick="changeVal(7)"><span> Coordinator</span><br>
-                    <input type="radio" name="redirect"  onClick="changeVal(8)"><span> Staff Volunteer</span><br>
+                    <input type="radio" name="redirect"  onClick="changeVal(8)"><span> Staff Coordinators</span><br>
                     <input type="radio" name="redirect"  onClick="changeVal(9)"><span> Seva</span><br>
                     <input type="radio" name="redirect"  onClick="changeVal(10)"><span> Volunteers</span><br>
                     <input type="radio" name="redirect"  onClick="changeVal(11)"><span> Staff Volunteers</span><br>
