@@ -45,7 +45,7 @@ class TransportationController extends Controller
         $this -> validate($request, [   
         	'mode' => 'required|max:255',
             'busno' => 'required|max:255',
-        	'contact' => 'required|numeric',
+        	'contact' => 'nullable|numeric',
         	'from' => 'required|max:255',
         	'destination' => 'required|max:255',
         	'deptime' => 'required|max:255',
@@ -107,7 +107,7 @@ class TransportationController extends Controller
         $this -> validate($request, [
             'mode' => 'required|max:255',
             'busno' => 'required|max:255',
-            'contact' => 'required|numeric',
+            'contact' => 'numeric',
             'from' => 'required|max:255',
             'destination' => 'required|max:255',
             'deptime' => 'required|max:255',

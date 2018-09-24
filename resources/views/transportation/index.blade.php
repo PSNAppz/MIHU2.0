@@ -54,7 +54,7 @@
             </thead>
             <tbody>
                @foreach($transportation as $transport)
-               @if ($transport->mode == "Bus" || $transport->mode == "bus")
+               @if ($transport->mode == "Bus")
                <tr>
                   <th>{{ $transport->busno}}</th>
                   <th>{{ $transport->contact}}</th>
@@ -89,7 +89,7 @@
             </thead>
             <tbody>
                @foreach($transportation as $transport)
-               @if ($transport->mode == "Train" || $transport->mode != "train")
+               @if ($transport->mode == "Train")
                <tr>
                   <th>{{ $transport->busno}}</th>
                   <th>{{ $transport->from}}</th>

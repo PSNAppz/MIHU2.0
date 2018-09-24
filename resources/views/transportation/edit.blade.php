@@ -18,7 +18,7 @@
         {{ Form::text('busno',$transportation->busno, array('class'=> 'form-control','required' => ''))}}
 
         {{ Form::label('contact','Contact: ')}}
-        {{ Form::text('contact',$transportation->contact,array('class'=> 'form-control','required'=> ''))}}
+        {{ Form::text('contact',$transportation->contact,array('class'=> 'form-control'))}}
 
         {{ Form::label('from', 'From: ') }}
         {{ Form::text('from',$transportation->from,array('class'=> 'form-control','required'=> ''))}}
