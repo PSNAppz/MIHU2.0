@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\Accommodation;
 use App\StaffVolunteer;
 use App\Volunteer;
+use App\AshramVolunteers;
+use App\Coordinator;
 
 use Maatwebsite\Excel\Facades\Excel;
 use Illuminate\Support\Facades\Input;
@@ -110,6 +112,15 @@ class ExcelCOntroller extends Controller{
                 });
             })->download($type);
             }
+            if($database=="ashramvol"){
+            $data = StaffVolunteer::get()->toArray();
+            return Excel::create('Ashram Volunteers', function($excel) use ($data) {
+                $excel->sheet('mySheet', function($sheet) use ($data)
+                {
+                    $sheet->fromArray($data);
+                });
+            })->download($type);
+            }
     }
 
     public function importExcel($database){
@@ -136,6 +147,87 @@ class ExcelCOntroller extends Controller{
     			}
     		}
         }
+        elseif($database =='volunteer'){
+                if(Input::hasFile('import_file')){
+                    $path = Input::file('import_file')->getRealPath();
+                    $data = Excel::load($path, function($reader) {
+                    })->get();
+                    if(!empty($data) && $data->count()){
+                        foreach ($data as $key => $value) {
+                            Volunteers::create([
+                                'name' => $value->name,
+                                'batch' => $value->batch,
+                                'campus' => $value->campus,
+                                'contact' => $value->contact,
+                                'seva' => $value->seva,
+                                'cordname' => $value->cordname,
+                                'cordcontact' => $value->cordcontact
+                            ]);
+                        }
+                        dd('Insert Record successfully.');
+                        redirect()->route('home');
+                    }
+                }
+            }
+        elseif($database == 'coordinator'){
+            if(Input::hasFile('import_file')){
+                $path = Input::file('import_file')->getRealPath();
+                $data = Excel::load($path, function($reader) {
+                })->get();
+                if(!empty($data) && $data->count()){
+                    foreach ($data as $key => $value) {
+                        Coordinator::create([
+                        'name' => $value->name,
+                        'seva' => $value->seva,
+                        'department' => $value->department,
+                        'contact' => $value->contact
+                    ]);
+                    }
+                    dd('Insert Record successfully.');
+-                        redirect()->route('home');
+                }
+            }
+        }
+
+        elseif($database == 'staffvol'){
+            if(Input::hasFile('import_file')){
+                $path = Input::file('import_file')->getRealPath();
+                $data = Excel::load($path, function($reader) {
+                })->get();
+                if(!empty($data) && $data->count()){
+                    foreach ($data as $key => $value) {
+                        StaffVolunteer::create([
+                        'name' => $value->name,
+                        'seva' => $value->seva,
+                        'department' => $value->department,
+                        'contact' => $value->contact
+                    ]);
+                    }
+                    dd('Insert Record successfully.');
+-                        redirect()->route('home');
+                }
+            }
+        }
+         elseif($database == 'others'){
+            if(Input::hasFile('import_file')){
+                $path = Input::file('import_file')->getRealPath();
+                $data = Excel::load($path, function($reader) {
+                })->get();
+                if(!empty($data) && $data->count()){
+                    foreach ($data as $key => $value) {
+                        AshramVolunteers::create([
+                        'incharge' => $value->incharge,
+                        'section' => $value->section,
+                        'seva_place' => $value->seva_place,
+                        'contact' => $value->contact
+                    ]);
+                    }
+                    dd('Insert Record successfully.');
+-                        redirect()->route('home');
+                }
+            }
+        }
+
         else{
             return view('admin.index');
         }

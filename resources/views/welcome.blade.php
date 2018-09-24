@@ -141,7 +141,7 @@
                 <a href="/volunteer" style="text-decoration: none;">
                     <div class="card" id="card_gradient4" style="width: 18rem;text-align: center;">
                             <div class="card-body">
-                                <i style="font-size:40px;color:white;" class="fa fa-hands-helping icon"></i>
+                                <i style="font-size:40px;color:white;" class="fa fa-users icon"></i>
                                 <h5 class="card-title" style="font-weight: bold;color: white;font-family: 'Fugaz One', cursive;font-size: 25px">Volunteers</h5>
                                 <h6 class="card-subtitle mb-2 text" style="color: white;">Volunteers for Seva</h6>
                             </div>
@@ -153,7 +153,7 @@
                <a href="#" style="text-decoration: none;">
                     <div class="card" id="card_gradient4" style="width: 18rem;text-align: center;">
                             <div class="card-body">
-                                <i class="fap fa-map-marker icon" style="font-size:40px;color:white"></i>
+                                <i class="fa fa-map-marker icon" style="font-size:40px;color:white"></i>
                                 <h5 class="card-title" style="font-weight: bold;color: white;font-family: 'Fugaz One', cursive;font-size: 25px">Map</h5>
                                 <h6 class="card-subtitle mb-2 text" style="color: white;">View Maps for the Program</h6>
                             </div>
@@ -165,7 +165,7 @@
                <a href="#" style="text-decoration: none;">
                     <div class="card" id="card_gradient4" style="width: 18rem;text-align: center;">
                             <div class="card-body">
-                                <i class="fa fa-info-circle" style="font-size:45px;color:white"></i>
+                                <i class="fa fa-info-circle" style="font-size:40px;color:white"></i>
                                 <h5 class="card-title" style="font-weight: bold;color: white;font-family: 'Fugaz One', cursive;font-size: 25px">Info</h5>
                                 <h6 class="card-subtitle mb-2 text" style="color: white;">Informations and Current News</h6>
                             </div>
