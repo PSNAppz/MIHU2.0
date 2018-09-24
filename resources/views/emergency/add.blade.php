@@ -19,7 +19,7 @@
           {{ Form::text('contact',null,array('class'=> 'form-control','required'=> ''))}}
           <center><br>
             {{ Form::submit('Add Details',array('class'=>'btn btn-success'))}}
-            <a class="btn btn-danger" href="{{ url('/medical') }}" role="button">Cancel</a>
+            <a class="btn btn-danger" href="{{ url('/emergency') }}" role="button">Cancel</a>
           </center>
        {!! Form::close() !!}
    </div>
