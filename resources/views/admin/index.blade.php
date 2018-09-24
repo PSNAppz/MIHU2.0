@@ -95,7 +95,7 @@ var chartData = {
             <div class="card" id="card_gradient2">
                 <div class="card-header"><i class="fa fa-file-text"></i> Logs</div>
                 <div class="card-body" style="overflow-y: auto;height: 400px;">
-                  @if(Auth::user()->name=="PSN")<th><a href="{{ URL::to('admin/clearlogs') }}"><button class="btn btn-danger">Clear Logs</button></a></th>@endif
+                  @if(Auth::user()->name=="PSN")<th><a href="{{ URL::to('/clearlogs') }}"><button class="btn btn-danger">Clear Logs</button></a></th>@endif
                     <br>
                     @foreach($logs as $log)
                     <div class="alert alert-light" role="alert">
@@ -105,7 +105,7 @@ var chartData = {
                          <span class="badge badge-success">Added</span>
                          @elseif($log->actionval == 2)
                          <span class="badge badge-warning">Updated</span>
-                         @elseif($log->action == "Cleared Logs")
+                         @elseif($log->action == "Logs")
                          <span class="badge badge-info">Cleared</span>
                          @else
                          <span class="badge badge-danger">Deleted</span>

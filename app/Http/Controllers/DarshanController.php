@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Darshan;
 use Illuminate\Http\Request;
 use Session;
+use App\LogEngine;
+use 
 
 class DarshanController extends Controller
 {
@@ -48,10 +50,17 @@ class DarshanController extends Controller
             'token_time' => 'required|max:255'
         ));
         $darshan = new Darshan();
+        $log = new LogEngine();
+        $log->user_id=Auth::user()->id;
+        $log->name=Auth::user()->name;
+        $log->action="Darshan";
+        $log->actionval = 1;
         $darshan->darshan_time = $request->darshan_time;
         $darshan->date = $request->date;
         $darshan->token_loc = $request->token_loc;
         $darshan->token_time = $request->token_time;
+        $log->detailed_data = $darshan;
+        $log->save();
         $darshan->save();
         Session::flash('success', 'Darshan token details has been added Successfully!');
         return redirect()->route('darshan.index');
@@ -98,6 +107,13 @@ class DarshanController extends Controller
             'token_time' => 'required|max:255'
         ]);
         $input = $request->all();
+        $log = new LogEngine();
+        $log->user_id=Auth::user()->id;
+        $log->name=Auth::user()->name;
+        $log->action="Darshan";
+        $log->actionval = 2;
+        $log->detailed_data = $darsh;
+        $log->save();
         $darsh->fill($input)->save();
         Session::flash('success', 'Darshan details has been updated!');
         return redirect()->route('darshan.index');
@@ -112,6 +128,13 @@ class DarshanController extends Controller
     public function destroy(Darshan $darshan)
     {
         $darsh = Darshan::find($darshan->id);
+        $log = new LogEngine();
+        $log->user_id=Auth::user()->id;
+        $log->name=Auth::user()->name;
+        $log->action="Darshan";
+        $log->actionval = 3;
+        $log->detailed_data = $darsh;
+        $log->save();
         $darsh->delete();
         Session::flash('success', 'Darshan details has been removed!');
         return redirect()->route('darshan.index');
