@@ -19,6 +19,9 @@ Auth::routes();
 Route::get('/register',function(){
 	return view('errors.404');
 });
+
+Route::resource('transportation', 'TransportationController');
+
 Route::get('/clearlogs', 'LogEngineController@destroy');
 
 Route::resource('darshan', 'DarshanController');
