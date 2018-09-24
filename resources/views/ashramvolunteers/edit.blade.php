@@ -10,7 +10,7 @@
    @endif
    <h1 class="display-4" style="color:white;">Update Transportation Details</h1>
    <div class="col-sm">
-        {{ Form::model($ashramvolunteers, array('route' => array('ashramvolunteers.update', $ashramvolunteers->id),'data-parsley-validate' => '', 'method' => 'PUT')) }}
+        {{ Form::model($ashramvolunteers, array('route' => array('ashramvol.update', $ashramvolunteers->id),'data-parsley-validate' => '', 'method' => 'PUT')) }}
         {{ Form::label('section', 'Section') }}
         {{ Form::text('section',$ashramvolunteers->section, array('class'=> 'form-control','required' => ''))}}
 

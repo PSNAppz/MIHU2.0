@@ -144,6 +144,8 @@ var chartData = {
                     <input type="radio" name="redirect"  onClick="changeVal(8)"><span> Staff Volunteer</span><br>
                     <input type="radio" name="redirect"  onClick="changeVal(9)"><span> Seva</span><br>
                     <input type="radio" name="redirect"  onClick="changeVal(10)"><span> Volunteers</span><br>
+                    <input type="radio" name="redirect"  onClick="changeVal(11)"><span> Staff Volunteers</span><br>
+                    <input type="radio" name="redirect"  onClick="changeVal(12)"><span> Ashram Volunteers</span><br>
                 </form>
                 <br>
                 <h5>Choose a format</h5>

@@ -12,6 +12,7 @@
       $(document).ready( function () {
        $('#volunteer').DataTable();
        $('#vol').DataTable();
+       $('#ashramvol').DataTable();
       } );
    </script>
    <style type="text/css">
@@ -25,6 +26,8 @@
       <div class="nav nav-tabs" id="nav-tab" role="tablist">
          <a class="nav-item nav-link active" id="nav-student-tab" data-toggle="tab" href="#nav-student" role="tab" aria-controls="nav-student" aria-selected="true">Student Volunteers</a>
          <a class="nav-item nav-link" id="nav-dev-tab" data-toggle="tab" href="#nav-dev" role="tab" aria-controls="nav-dev" aria-selected="false">Staff Volunteers</a>
+         <a class="nav-item nav-link" id="nav-ash-tab" data-toggle="tab" href="#nav-ash" role="tab" aria-controls="nav-ash" aria-selected="false">Ashram Volunteers</a>
+
       </div>
       <br>
       
@@ -109,6 +112,47 @@
                   @if(!Auth::guest())
                   <th><a class="btn btn-warning" href="{{ route('staff.edit', $cord->id,'/edit') }}" role="button">Update</a></th>
                   <th>  {{ Form::open(['method' => 'DELETE', 'route' => ['staff.destroy', $cord->id]]) }}
+                     {{ Form::submit('Delete', ['class' => 'btn btn-danger']) }}
+                     {{ Form::close() }}
+                  </th>
+                  @endif
+               </tr>
+               @endforeach
+            </tbody>
+         </table>
+      </div>
+      <div class="tab-pane fade show " id="nav-ash" role="tabpanel" aria-labelledby="nav-ash-tab">
+      @if(!Auth::guest())
+      <a class="btn btn-primary " href="{{ url('/ashramvol/create') }}" role="button" >Add New +</a>
+      <a  id="xlsf" href="{{ URL::to('downloadExcel/ashramvol/xls') }}"><button class="btn btn-info">Download Excel xls</button></a>
+      <a id="xlsxf" href="{{ URL::to('downloadExcel/ashramvol/xlsx') }}"><button class="btn btn-info">Download Excel xlsx</button></a>
+      <a id="csvf" href="{{ URL::to('downloadExcel/ashramvol/csv') }}"><button class="btn btn-info">Download CSV</button></a>
+      @endif
+      <br>
+      <br>
+         <table id="ashramvol" class="table table-striped table-bordered dt-responsive nowrap" style="width:100%;color:white;">
+            <thead>
+               <tr>
+                  <th>Name</th>
+                  <th>Seva</th>
+                  <th>Seva Place</th>
+                  <th>Contact</th>
+                  @if(!Auth::guest())
+                  <th>Update</th>
+                  <th>Delete</th>
+                  @endif
+               </tr>
+            </thead>
+            <tbody>
+               @foreach($ashramvols as $cord)
+               <tr>
+                  <th>{{ $cord->incharge}}</th>
+                  <th>{{ $cord->section}}</th>
+                  <th>{{ $cord->seva_place}}</th>
+                  <th>{{$cord->contact}}</th>
+                  @if(!Auth::guest())
+                  <th><a class="btn btn-warning" href="{{ route('ashramvol.edit', $cord->id,'/edit') }}" role="button">Update</a></th>
+                  <th>  {{ Form::open(['method' => 'DELETE', 'route' => ['ashramvol.destroy', $cord->id]]) }}
                      {{ Form::submit('Delete', ['class' => 'btn btn-danger']) }}
                      {{ Form::close() }}
                   </th>

@@ -20,6 +20,8 @@ Route::get('/register',function(){
 	return view('errors.404');
 });
 
+Route::resource('ashramvol','AshramVolunteersController');
+
 Route::resource('transportation', 'TransportationController');
 
 Route::get('/clearlogs', 'LogEngineController@destroy');

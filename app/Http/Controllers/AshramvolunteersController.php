@@ -4,8 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Ashramvolunteers;
 use Illuminate\Http\Request;
-use App/LogEngine;
+use App\LogEngine;
 use Session;
+use Auth;
 
 class AshramvolunteersController extends Controller
 {
@@ -44,8 +45,8 @@ class AshramvolunteersController extends Controller
          $this -> validate($request, [   
             'section' => 'required|max:255',
             'seva_place' => 'nullable|max:255',
-            'incharge' => 'required|numeric',
-            'contact' => 'nullable|max:255'
+            'incharge' => 'required|max:255',
+            'contact' => 'nullable|numeric'
         ]);
         $log = new LogEngine();
         $ashramvolunteers = new Ashramvolunteers();
@@ -61,7 +62,7 @@ class AshramvolunteersController extends Controller
         $log->save();
         $ashramvolunteers->save();
         Session::flash('success', 'Ashramvolunteers Details successfully added!');
-        return redirect()->route('#.index');
+        return redirect()->route('volunteer.index');
     }
 
     /**
@@ -81,12 +82,12 @@ class AshramvolunteersController extends Controller
      * @param  \App\Ashramvolunteers  $ashramvolunteers
      * @return \Illuminate\Http\Response
      */
-    public function edit(Ashramvolunteers $ashramvolunteers)
+    public function edit($ashramvolunteers)
     {
-        $ashramvolunteers = Ashramvolunteers::find($ashramvolunteers->id);
-        return view('ashramvolunteers.edit')->withAshramvol($ashramvolunteers);
+        $ashramvolunteers = Ashramvolunteers::find($ashramvolunteers);
+        return view('ashramvolunteers.edit')->withAshramvolunteers($ashramvolunteers);
     }
-    }
+    
 
     /**
      * Update the specified resource in storage.
@@ -95,14 +96,14 @@ class AshramvolunteersController extends Controller
      * @param  \App\Ashramvolunteers  $ashramvolunteers
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Ashramvolunteers $ashramvolunteers)
+    public function update(Request $request,$ashramvolunteers)
     {
-        $transport = Ashramvolunteers::find($ashramvolunteers->id);
+        $ashramvolunteers = Ashramvolunteers::find($ashramvolunteers);
         $this -> validate($request, [
             'section' => 'required|max:255',
             'seva_place' => 'nullable|max:255',
-            'incharge' => 'required|numeric',
-            'contact' => 'nullable|max:255'
+            'incharge' => 'required|max:255',
+            'contact' => 'nullable|numeric'
             ]);
         $input = $request->all();
         $log = new LogEngine();
@@ -112,20 +113,19 @@ class AshramvolunteersController extends Controller
         $log->actionval = 2;
         $log->detailed_data = $ashramvolunteers;
         $log->save();
-        $transport->fill($input)->save();
+        $ashramvolunteers->fill($input)->save();
         Session::flash('success', 'Ashram Volunteers details successfully edited!');
-        return redirect()->route('#.index');
+        return redirect()->route('volunteer.index');
     }
-
     /**
      * Remove the specified resource from storage.
      *
      * @param  \App\Ashramvolunteers  $ashramvolunteers
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Ashramvolunteers $ashramvolunteers)
+    public function destroy($ashramvolunteers)
     {
-        $ashramvolunteers = Ashramvolunteers::find($ashramvolunteers->id);
+        $ashramvolunteers = Ashramvolunteers::find($ashramvolunteers);
         $log = new LogEngine();
         $log->user_id=Auth::user()->id;
         $log->name=Auth::user()->name;
@@ -135,6 +135,6 @@ class AshramvolunteersController extends Controller
         $log->save();
         $ashramvolunteers->delete();
         Session::flash('success', 'Ashram Volunteers details successfully removed!');
-        return redirect()->route('ashramvolunteers.index');
+        return redirect()->route('volunteer.index');
     }
 }
