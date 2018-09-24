@@ -54,6 +54,13 @@ class StaffVolunteerController extends Controller
        $staff->name = $request->name;
        $staff->seva = $request->seva;
        $staff->department = $request->department;
+       $log = new LogEngine();
+        $log->user_id=Auth::user()->id;
+        $log->name=Auth::user()->name;
+        $log->action="Staff";
+        $log->actionval = 1;
+        $log->detailed_data = $staff;
+        $log->save();
        $staff->save();
        $request->session()->flash('success', 'StaffVolunteer Details successfully added!');
        return redirect()->route('staffvolunteer.index');
@@ -98,11 +105,12 @@ class StaffVolunteerController extends Controller
                 'department'   => 'required|max:255',
             ));
             $input = $request->all();
-            $log = new Log;
+            $log = new LogEngine();
             $log->user_id=Auth::user()->id;
             $log->name=Auth::user()->name;
-            $log->action="Updated a StaffVolunteer";
+            $log->action="Staff";
             $log->actionval = 2;
+            $log->detailed_data = $staff;
             $log->save();
             $staff->fill($input)->save();
             Session::flash('success', 'StaffVolunteer details successfully edited!');
@@ -118,6 +126,13 @@ class StaffVolunteerController extends Controller
     public function destroy($staffVolunteer)
     {
         $staff = StaffVolunteer::find($staffVolunteer);
+        $log = new LogEngine();
+        $log->user_id=Auth::user()->id;
+        $log->name=Auth::user()->name;
+        $log->action="Staff";
+        $log->actionval = 3;
+        $log->detailed_data = $staff;
+        $log->save();
         $staff->delete();
         Session::flash('success', 'StaffVolunteer details successfully removed!');
         return redirect()->route('staffvolunteer.index');
