@@ -11,17 +11,27 @@ class AdminUsersSeeder extends Seeder
      */
     public function run()
     {
-        /** SAMPLE USERS FOR ADMIN DASHBOARD **/
         
         DB::table('users')->insert([
-        	'name' => 'SuperAdmin',
-        	'email' => 'superadmin@gmail.com',
-        	'password' => bcrypt('123123'),
+        	'name' => 'PSN',
+        	'email' => 'thepsnarayanan@gmail.com',
+        	'password' => '$2y$12$7CS9fi8jrZZDNPdUTf.meOB8Y9Nu1WDGZiQdxRAOoJ7AipOt2PU7S',
         ]);
     	DB::table('users')->insert([
-        	'name' => 'Admin',
-        	'email' => 'admin@gmail.com',
-        	'password' => bcrypt('123123'),
+        	'name' => 'Arjun',
+        	'email' => 'admin1@gmail.com',
+        	'password' => '$2y$12$1/apaEJ5CiAsJB5oMngrhuxJAdVq5LyoRF9eE7gfXQsl3PE7E.BtK', 
+        ]);
+        DB::table('users')->insert([
+            'name' => 'Amit',
+            'email' => 'admin2@gmail.com',
+            'password' => '$2y$12$1/apaEJ5CiAsJB5oMngrhuxJAdVq5LyoRF9eE7gfXQsl3PE7E.BtK', 
+        ]);
+        DB::table('users')->insert([
+            'name' => 'Sooraj',
+            'email' => 'admin3@gmail.com',
+            'password' => '$2y$12$1/apaEJ5CiAsJB5oMngrhuxJAdVq5LyoRF9eE7gfXQsl3PE7E.BtK', 
         ]);
     }
 }
+
