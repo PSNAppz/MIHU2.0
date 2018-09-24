@@ -3,6 +3,7 @@ namespace App\Http\Controllers;
 use App\Volunteer;
 use Illuminate\Http\Request;
 use Session;
+use App\Staff;
 
 class VolunteerController extends Controller
 
@@ -22,9 +23,10 @@ class VolunteerController extends Controller
     public
 
     function index()
-    {
+    {   
+        $staffs = Staff::get();
         $volunteers = Volunteer::get();
-        return view('volunteer.index')->withVolunteers($volunteers);
+        return view('volunteer.index')->withVolunteers($volunteers)->withStaffs($staffs);
     }
 
     /**

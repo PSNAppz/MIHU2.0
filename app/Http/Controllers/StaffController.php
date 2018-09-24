@@ -2,20 +2,14 @@
 
 namespace App\Http\Controllers;
 
-use App\Coordinator;
-use App\StaffVolunteer;
+use App\Staff;
 use Illuminate\Http\Request;
-use Session;
 use App\LogEngine;
 use Auth;
+use Session;
 
-class StaffVolunteerController extends Controller
+class StaffController extends Controller
 {
-
-    public function __construct()
-     {
-         $this->middleware('auth',['only' => 'create','store','edit','update','destroy']);
-     }
     /**
      * Display a listing of the resource.
      *
@@ -23,9 +17,7 @@ class StaffVolunteerController extends Controller
      */
     public function index()
     {
-        $coordinators = Coordinator::get();
-        $staff = StaffVolunteer::get();
-        return view('coordinator.index')->withCoordinators($coordinators)->withStaff($staff);
+        
     }
 
     /**
@@ -35,7 +27,7 @@ class StaffVolunteerController extends Controller
      */
     public function create()
     {
-        return view('staff.add');
+        return view('staffvol.add');
     }
 
     /**
@@ -50,33 +42,32 @@ class StaffVolunteerController extends Controller
                'name'          => 'required|max:255',
                'seva'        => 'required|max:255',
                'department'   => 'required|max:255',
-               
+               'contact'    => 'nullable|numeric'
            ));
        // store in the database
-       $staff = new StaffVolunteer;
+       $staff = new Staff;
        $staff->name = $request->name;
        $staff->seva = $request->seva;
        $staff->department = $request->department;
-       $staff->contact = $request->contact;
        $log = new LogEngine();
         $log->user_id=Auth::user()->id;
         $log->name=Auth::user()->name;
-        $log->action="Staff Coordinator";
+        $log->action="StaffVolunteer";
         $log->actionval = 1;
         $log->detailed_data = $staff;
         $log->save();
        $staff->save();
-       $request->session()->flash('success', 'Staff Coordinator Details successfully added!');
-       return redirect()->route('staffvolunteer.index');
+       $request->session()->flash('success', 'StaffVolunteer Details successfully added!');
+       return redirect()->route('volunteer.index');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\StaffVolunteer  $staffVolunteer
+     * @param  \App\Staff  $staff
      * @return \Illuminate\Http\Response
      */
-    public function show(StaffVolunteer $staffVolunteer)
+    public function show(Staff $staff)
     {
         //
     }
@@ -84,61 +75,62 @@ class StaffVolunteerController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\StaffVolunteer  $staffVolunteer
+     * @param  \App\Staff  $staff
      * @return \Illuminate\Http\Response
      */
-    public function edit($staffVolunteer)
+    public function edit(Staff $staff)
     {
-        $staff = StaffVolunteer::find($staffVolunteer);
-        return view('staff.edit')->withStaff($staff);
+        $staff = Staff::find($staff->id);
+        return view('staffvol.edit')->withStaff($staff);
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\StaffVolunteer  $staffVolunteer
+     * @param  \App\Staff  $staff
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request,$staffVolunteer)
+    public function update(Request $request, Staff $staff)
     {
-        $staff = StaffVolunteer::find($staffVolunteer);
+        $staff = Staff::find($staff->id);
         $this->validate($request, array(
                 'name'          => 'required|max:255',
                 'seva'        => 'required|max:255',
                 'department'   => 'required|max:255',
+                'contact'    => 'nullable|numeric'
             ));
             $input = $request->all();
             $log = new LogEngine();
             $log->user_id=Auth::user()->id;
             $log->name=Auth::user()->name;
-            $log->action="Staff Coordinator";
+            $log->action="StaffVolunteer";
             $log->actionval = 2;
             $log->detailed_data = $staff;
             $log->save();
             $staff->fill($input)->save();
-            Session::flash('success', 'Staff Coordinator details successfully edited!');
-            return redirect()->route('staffvolunteer.index');
+            Session::flash('success', 'Staff Volunteer details successfully edited!');
+            return redirect()->route('volunteer.index');
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\StaffVolunteer  $staffVolunteer
+     * @param  \App\Staff  $staff
      * @return \Illuminate\Http\Response
      */
-    public function destroy($staffVolunteer)
+    public function destroy(Staff $staff)
     {
-        $staff = StaffVolunteer::find($staffVolunteer);
+        $staff = Staff::find($staff->id);
         $log = new LogEngine();
         $log->user_id=Auth::user()->id;
         $log->name=Auth::user()->name;
-        $log->action="Staff Coordinator";
+        $log->action="StaffVolunteer";
         $log->actionval = 3;
         $log->detailed_data = $staff;
         $log->save();
         $staff->delete();
-        Session::flash('success', 'Staff Coordinator details successfully removed!');
-        return redirect()->route('staffvolunteer.index');
+        Session::flash('success', 'Staff Volunteer details successfully removed!');
+        return redirect()->route('volunteer.index');
     }
 }

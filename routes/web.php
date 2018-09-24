@@ -26,6 +26,8 @@ Route::get('/clearlogs', 'LogEngineController@destroy');
 
 Route::resource('darshan', 'DarshanController');
 
+Route::resource('staff','StaffController');
+
 Route::resource('media','MediaController');
 
 Route::resource('emergency','EmergencyController');
