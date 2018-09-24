@@ -49,12 +49,12 @@ class TransportationController extends Controller
         	'from' => 'required|max:255',
         	'destination' => 'required|max:255',
         	'deptime' => 'required|max:255',
-            'parking' => 'required|max:255'
+            'parking' => 'nullable|max:255'
         ]);
         $log = new LogEngine();
         $transportation = new Transportation();
         $transportation->mode = $request->mode;
-        $transportation->busno = $request->mode;
+        $transportation->busno = $request->busno;
         $transportation->contact = $request->contact;
         $transportation->from  = $request->from;
         $transportation->destination = $request->destination;

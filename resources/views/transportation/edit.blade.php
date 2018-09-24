@@ -30,7 +30,7 @@
         {{ Form::text('deptime',$transportation->deptime,array('class'=> 'form-control','required'=> ''))}}
 
         {{ Form::label('parking','Parking: ')}}
-        {{ Form::text('parking',$transportation->parking,array('class'=> 'form-control','required'=> ''))}}
+        {{ Form::text('parking',$transportation->parking,array('class'=> 'form-control',))}}
 
         {{ Form::submit('Edit Details',array('class'=>'btn btn-success btn-block','style' =>'margin-top:20px;'))}}
         <a class="btn btn-danger btn-block" href="{{ url('/transportation') }}" role="button">Cancel</a>
