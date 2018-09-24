@@ -18,7 +18,7 @@
           {{ Form::text('busno',null,array('class'=> 'form-control','required'=> ''))}}
           
           {{ Form::label('contact','Contact:')}}
-          {{ Form::text('contact',null,array('class'=> 'form-control','required' => ''))}}
+          {{ Form::text('contact',null,array('class'=> 'form-control'))}}
 
           {{ Form::label('from','From: *')}}
           {{ Form::text('from',null,array('class'=> 'form-control','required'=> ''))}}
