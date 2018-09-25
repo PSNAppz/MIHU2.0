@@ -4,7 +4,7 @@ use App\Volunteer;
 use Illuminate\Http\Request;
 use Session;
 use App\Staff;
-use App\AshramVolunteers;
+use App\Ashramvolunteers;
 use App\LogEngine;
 use Auth;
 
@@ -27,7 +27,7 @@ class VolunteerController extends Controller
 
     function index()
     {   
-        $ashramvols = AshramVolunteers::get();
+        $ashramvols = Ashramvolunteers::get();
         $staffs = Staff::get();
         $volunteers = Volunteer::get();
         return view('volunteer.index')->withVolunteers($volunteers)->withStaffs($staffs)->withAshramvols($ashramvols);
