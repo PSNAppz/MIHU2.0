@@ -24,6 +24,10 @@ Route::get('/map', function(){
 	return view('maps.index');
 });
 
+Route::get('/info', function(){
+	return view('info.index');
+});
+
 Route::resource('ashramvol','AshramVolunteersController');
 
 Route::resource('transportation', 'TransportationController');
