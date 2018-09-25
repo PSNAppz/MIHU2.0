@@ -24,8 +24,10 @@
    <br>
    <nav>
       <div class="nav nav-tabs" id="nav-tab" role="tablist">
-         <a class="nav-item nav-link active" id="nav-student-tab" data-toggle="tab" href="#nav-student" role="tab" aria-controls="nav-student" aria-selected="true">Student Volunteers</a>
+         {{-- <a class="nav-item nav-link active" id="nav-student-tab" data-toggle="tab" href="#nav-student" role="tab" aria-controls="nav-student" aria-selected="true">Student Volunteers</a> --}}
+         <a class="nav-item nav-link active" id="nav-shift-tab" data-toggle="tab" href="#nav-shift" role="tab" aria-controls="nav-shift" aria-selected="true">Volunteer Shifts</a>
          <a class="nav-item nav-link" id="nav-dev-tab" data-toggle="tab" href="#nav-dev" role="tab" aria-controls="nav-dev" aria-selected="false">Staff Volunteers</a>
+         <a class="nav-item nav-link" id="nav-stafshf-tab" data-toggle="tab" href="#nav-stafshf" role="tab" aria-controls="nav-stafshf" aria-selected="false">Staff Shifts</a>
          <a class="nav-item nav-link" id="nav-ash-tab" data-toggle="tab" href="#nav-ash" role="tab" aria-controls="nav-ash" aria-selected="false">Ashram Volunteers</a>
 
       </div>
@@ -33,7 +35,106 @@
       
    </nav>
    <div class="tab-content" id="nav-tabContent">
-      <div class="tab-pane fade show active" id="nav-student" role="tabpanel" aria-labelledby="nav-student-tab">
+      <div class="tab-pane fade show " id="nav-shift" role="tabpanel" aria-labelledby="nav-shift-tab">
+   <div class="accordion" id="accordionExample">
+  <div class="card">
+    <div class="card-header" id="headingOne">
+      <h5 class="mb-0">
+        <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+          MIHU Student Shift Main gate
+        </button>
+      </h5>
+    </div>
+
+    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+      <div class="card-body">
+        <center><img src="{{ asset('images/image1.png') }}" alt=" Map1" width="100%" height="70%"></center>  
+      </div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-header" id="headingTwo">
+      <h5 class="mb-0">
+        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+          MIHU Student shift Counters
+        </button>
+      </h5>
+    </div>
+    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+      <div class="card-body">
+        <center><img src="{{ asset('images/image2.png') }}" alt=" Map1" width="100%" height="70%"></center>  
+      </div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-header" id="headingThree">
+      <h5 class="mb-0">
+        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+          MIHU Student shift Lobby
+        </button>
+      </h5>
+    </div>
+    <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+      <div class="card-body">
+        <center><img src="{{ asset('images/image 3.png') }}" alt=" Map1" width="100%" height="70%"></center>  
+      </div>
+    </div>
+  </div>
+</div>
+<div class="card">
+    <div class="card-header" id="headingFour">
+      <h5 class="mb-0">
+        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+          MIHU Student shift Ashram Counter
+        </button>
+      </h5>
+    </div>
+    <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordionExample">
+      <div class="card-body">
+        <center><img src="{{ asset('images/image 4.png') }}" alt=" Map1" width="100%" height="70%"></center>  
+      </div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-header" id="headingFive">
+      <h5 class="mb-0">
+        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+          MIHU Student shift Back Gate
+        </button>
+      </h5>
+    </div>
+    <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordionExample">
+      <div class="card-body">
+        <center><img src="{{ asset('images/image 5.png') }}" alt=" Map1" width="100%" height="70%"></center>  
+      </div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-header" id="headingSix">
+      <h5 class="mb-0">
+        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+          MIHU Student shift Bio Tech
+        </button>
+      </h5>
+    </div>
+    <div id="collapseSix" class="collapse" aria-labelledby="headingSix" data-parent="#accordionExample">
+      <div class="card-body">
+        <center><img src="{{ asset('images/image 6.png') }}" alt=" Map1" width="100%" height="70%"></center>  
+      </div>
+    </div>
+  </div>
+   </div>
+   <div class="tab-pane fade show " id="nav-stafshf" role="tabpanel" aria-labelledby="nav-stafshf-tab">
+      <center>
+         <img src="{{ asset('images/image 8-1.png') }}" alt=" Map1" width="100%" height="70%">
+         <img src="{{ asset('images/image 8-2.png') }}" alt=" Map1" width="100%" height="70%">
+         <img src="{{ asset('images/image 8-3.png') }}" alt=" Map1" width="100%" height="70%">
+      </center>  
+   </div>
+
+        
+
+      {{-- <div class="tab-pane fade show active" id="nav-student" role="tabpanel" aria-labelledby="nav-student-tab">
          @if(!Auth::guest())
       <a class="btn btn-primary " href="{{ url('/volunteer/create') }}" role="button" >Add New +</a>
       <a  id="xlsf" href="{{ URL::to('downloadExcel/volunteer/xls') }}"><button class="btn btn-info">Download Excel xls</button></a>
@@ -79,7 +180,7 @@
                @endforeach
             </tbody>
          </table>
-      </div>
+      </div> --}}
       <div class="tab-pane fade show " id="nav-dev" role="tabpanel" aria-labelledby="nav-dev-tab">
       @if(!Auth::guest())
       <a class="btn btn-primary " href="{{ url('/staff/create') }}" role="button" >Add New +</a>
