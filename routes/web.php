@@ -20,6 +20,10 @@ Route::get('/register',function(){
 	return view('errors.404');
 });
 
+Route::get('/map', function(){
+	return view('maps.index');
+});
+
 Route::resource('ashramvol','AshramVolunteersController');
 
 Route::resource('transportation', 'TransportationController');

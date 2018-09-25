@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use App\Accommodation;
 use App\StaffVolunteer;
 use App\Volunteer;
-use App\AshramVolunteers;
+use App\Ashramvolunteers;
 use App\Coordinator;
 use App\Staff;
 
@@ -123,7 +123,7 @@ class ExcelCOntroller extends Controller{
             })->download($type);
             }
             if($database=="ashramvol"){
-            $data = AshramVolunteers::get()->toArray();
+            $data = Ashramvolunteers::get()->toArray();
             return Excel::create('Ashram Volunteers', function($excel) use ($data) {
                 $excel->sheet('mySheet', function($sheet) use ($data)
                 {
@@ -243,7 +243,7 @@ class ExcelCOntroller extends Controller{
                 })->get();
                 if(!empty($data) && $data->count()){
                     foreach ($data as $key => $value) {
-                        AshramVolunteers::create([
+                        Ashramvolunteers::create([
                         'incharge' => $value->incharge,
                         'section' => $value->section,
                         'seva_place' => $value->seva_place,
