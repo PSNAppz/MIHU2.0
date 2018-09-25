@@ -115,7 +115,7 @@
             </div>
 
             <div class="col-sm">
-               <a href="#" style="text-decoration: none;">
+               <a href="/map" style="text-decoration: none;">
                     <div class="card" id="card_gradient1" style="width: 18rem;text-align: center;">
                             <div class="card-body">
                                 <i class="fa fa-map-marker icon" style="font-size:40px;color:white"></i>
