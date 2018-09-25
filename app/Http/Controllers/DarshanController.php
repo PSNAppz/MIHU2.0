@@ -6,7 +6,6 @@ use App\Darshan;
 use Illuminate\Http\Request;
 use Session;
 use App\LogEngine;
-use 
 
 class DarshanController extends Controller
 {
