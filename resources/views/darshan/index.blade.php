@@ -24,7 +24,9 @@
    <nav>
       <div class="nav nav-tabs" id="nav-tab" role="tablist">
          <a class="nav-item nav-link active" id="nav-darshtiming-tab" data-toggle="tab" href="#nav-darshtiming" role="tab" aria-controls="nav-darshtiming" aria-selected="true">Darshan Timing</a>
-         <a class="nav-item nav-link" id="nav-darshinst-tab" data-toggle="tab" href="#nav-darshinst" role="tab" aria-controls="nav-darshinst" aria-selected="false">Darshan Instruction</a>
+         <a class="nav-item nav-link" id="nav-darshinst-tab" data-toggle="tab" href="#nav-darshinst" role="tab" aria-controls="nav-darshinst" aria-selected="false">Darshan Instruction-EN</a>
+         <a class="nav-item nav-link" id="nav-darshinstml-tab" data-toggle="tab" href="#nav-darshinstml" role="tab" aria-controls="nav-darshinstml" aria-selected="false">Darshan Instruction-MAL</a>
+         <a class="nav-item nav-link" id="nav-darshinsttl-tab" data-toggle="tab" href="#nav-darshinsttl" role="tab" aria-controls="nav-darshinsttl" aria-selected="false">Darshan Instruction-TAMIL</a>
       </div>
       <br>
      
@@ -72,7 +74,13 @@
          </table>
       </div>
       <div class="tab-pane fade show " id="nav-darshinst" role="tabpanel" aria-labelledby="nav-darshinst-tab">
-        
+            <center><img src="{{ asset('images/Darshan_EN.png') }}" alt=" Map1" width="100%" height="70%"></center>  
+      </div>
+      <div class="tab-pane fade show " id="nav-darshinstml" role="tabpanel" aria-labelledby="nav-darshinstml-tab">
+            <center><img src="{{ asset('images/Darshan_ML.png') }}" alt=" Map1" width="100%" height="70%"></center>  
+      </div>
+      <div class="tab-pane fade show " id="nav-darshinsttl" role="tabpanel" aria-labelledby="nav-darshinsttl-tab">
+            <center><img src="{{ asset('images/Darshan_TM.png') }}" alt=" Map1" width="100%" height="70%"></center>  
       </div>
    </div>
 </div>

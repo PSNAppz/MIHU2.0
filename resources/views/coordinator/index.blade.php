@@ -23,7 +23,7 @@
    <br>
    <nav>
       <div class="nav nav-tabs" id="nav-tab" role="tablist">
-         <a class="nav-item nav-link active" id="nav-staff-tab" data-toggle="tab" href="#nav-staff" role="tab" aria-controls="nav-staff" aria-selected="true">Staff Coordinators</a>
+         <a class="nav-item nav-link active" id="nav-staff-tab" data-toggle="tab" href="#nav-staff" role="tab" aria-controls="nav-staff" aria-selected="true">Academic Staff Coordinators</a>
          <a class="nav-item nav-link" id="nav-student-tab" data-toggle="tab" href="#nav-student" role="tab" aria-controls="nav-student" aria-selected="true">Coordinators</a>
 
       </div>
