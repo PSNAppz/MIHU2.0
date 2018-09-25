@@ -24,7 +24,7 @@
    <br>
    <nav>
       <div class="nav nav-tabs" id="nav-tab" role="tablist">
-         {{-- <a class="nav-item nav-link active" id="nav-student-tab" data-toggle="tab" href="#nav-student" role="tab" aria-controls="nav-student" aria-selected="true">Student Volunteers</a> --}}
+         <!-- <a class="nav-item nav-link" id="nav-student-tab" data-toggle="tab" href="#nav-student" role="tab" aria-controls="nav-student" aria-selected="true">Student Volunteers</a> -->
          <a class="nav-item nav-link active" id="nav-shift-tab" data-toggle="tab" href="#nav-shift" role="tab" aria-controls="nav-shift" aria-selected="true">Volunteer Shifts</a>
          <a class="nav-item nav-link" id="nav-dev-tab" data-toggle="tab" href="#nav-dev" role="tab" aria-controls="nav-dev" aria-selected="false">Staff Volunteers</a>
          <a class="nav-item nav-link" id="nav-stafshf-tab" data-toggle="tab" href="#nav-stafshf" role="tab" aria-controls="nav-stafshf" aria-selected="false">Staff Shifts</a>
@@ -35,7 +35,7 @@
       
    </nav>
    <div class="tab-content" id="nav-tabContent">
-      <div class="tab-pane fade show " id="nav-shift" role="tabpanel" aria-labelledby="nav-shift-tab">
+      <div class="tab-pane fade show active " id="nav-shift" role="tabpanel" aria-labelledby="nav-shift-tab">
    <div class="accordion" id="accordionExample">
   <div class="card">
     <div class="card-header" id="headingOne">
