@@ -90,7 +90,7 @@ class CoordinatorController extends Controller
     public function edit(Coordinator $coordinator)
     {
         $cord = Coordinator::find($coordinator->id);
-        return view('Coordinator.edit')->withCord($cord);
+        return view('coordinator.edit')->withCord($cord);
     }
 
     /**
