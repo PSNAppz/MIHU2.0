@@ -25,7 +25,7 @@
    <nav>
       <div class="nav nav-tabs" id="nav-tab" role="tablist">
          <a class="nav-item nav-link active" id="nav-devotee-tab" data-toggle="tab" href="#nav-devotee" role="tab" aria-controls="nav-devotee" aria-selected="true">Devotees</a>
-         <a class="nav-item nav-link" id="nav-student-tab" data-toggle="tab" href="#nav-student" role="tab" aria-controls="nav-student" aria-selected="false">Students</a>
+         <a class="nav-item nav-link" id="nav-student-tab" data-toggle="tab" href="#nav-student" role="tab" aria-controls="nav-student" aria-selected="false">Location Info</a>
       </div>
       <br>
       @if(!Auth::guest())
