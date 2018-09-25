@@ -23,15 +23,15 @@
    <br>
    <nav>
       <div class="nav nav-tabs" id="nav-tab" role="tablist">
-         <a class="nav-item nav-link active" id="nav-student-tab" data-toggle="tab" href="#nav-student" role="tab" aria-controls="nav-student" aria-selected="true">Coordinators</a>
+         <a class="nav-item nav-link active" id="nav-staff-tab" data-toggle="tab" href="#nav-staff" role="tab" aria-controls="nav-staff" aria-selected="true">Staff Coordinators</a>
+         <a class="nav-item nav-link" id="nav-student-tab" data-toggle="tab" href="#nav-student" role="tab" aria-controls="nav-student" aria-selected="true">Coordinators</a>
 
-         <a class="nav-item nav-link" id="nav-staff-tab" data-toggle="tab" href="#nav-staff" role="tab" aria-controls="nav-staff" aria-selected="true">Staff Coordinators</a>
       </div>
       <br>
       
    </nav>
    <div class="tab-content" id="nav-tabContent">
-      <div class="tab-pane fade show active" id="nav-student" role="tabpanel" aria-labelledby="nav-student-tab">
+      <div class="tab-pane fade show " id="nav-student" role="tabpanel" aria-labelledby="nav-student-tab">
       @if(!Auth::guest())
       <a class="btn btn-primary " href="{{ url('/coordinator/create') }}" role="button" >Add New +</a>
       <a  id="xlsf" href="{{ URL::to('downloadExcel/coordinators/xls') }}"><button class="btn btn-info">Download Excel xls</button></a>
@@ -72,7 +72,7 @@
             </tbody>
          </table>
       </div>
-      <div class="tab-pane fade show" id="nav-staff" role="tabpanel" aria-labelledby="nav-staff-tab">
+      <div class="tab-pane fade show active" id="nav-staff" role="tabpanel" aria-labelledby="nav-staff-tab">
       @if(!Auth::guest())
       <a class="btn btn-primary " href="{{ url('/staffvolunteer/create') }}" role="button" >Add New +</a>
       <a  id="xlsf" href="{{ URL::to('downloadExcel/staff/xls') }}"><button class="btn btn-info">Download Excel xls</button></a>

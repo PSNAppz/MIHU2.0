@@ -57,7 +57,6 @@ class StaffVolunteerController extends Controller
        $staff->name = $request->name;
        $staff->seva = $request->seva;
        $staff->department = $request->department;
-       $staff->contact = $request->contact;
        $log = new LogEngine();
         $log->user_id=Auth::user()->id;
         $log->name=Auth::user()->name;
