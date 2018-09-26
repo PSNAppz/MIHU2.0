@@ -1,6 +1,9 @@
 @extends('layouts.default') @section('content')
 
 	<div class="container">
+      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong">
+  Announcements
+</button><br><br>
       <nav>
 		 <div class="nav nav-tabs" id="nav-tab" role="tablist">
          <a class="nav-item nav-link active" id="nav-info-tab" data-toggle="tab" href="#nav-info" role="tab" aria-controls="nav-info" aria-selected="true">Toilets</a>
