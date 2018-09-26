@@ -73,8 +73,74 @@
                   </th>
                   @endif
                </tr>
+
                @endif
                @endforeach
+               <tr>
+                  <th>Dermatology</th>
+                  <th>Dr Sidharth Mohan</th>
+                  <th>8281468180</th>
+                                    @if(!Auth::guest())
+
+<th></th><th></th>@endif
+               </tr>
+                <tr>
+                  <th>Pediatrics</th>
+                  <th>Dr Navya George</th>
+                  <th>9847500138</th>
+ @if(!Auth::guest())
+
+<th></th><th></th>@endif               </tr>
+                <tr>
+                  <th>Medicine</th>
+                  <th>Dr. Vinay Krishna</th>
+                  <th>8547746380</th>
+ @if(!Auth::guest())
+
+<th></th><th></th>@endif               </tr>
+                <tr>
+                  <th>Cardiology</th>
+                  <th>Dr Sanoop</th>
+                  <th>9995345301</th>
+ @if(!Auth::guest())
+
+<th></th><th></th>@endif               </tr>
+                <tr>
+                  <th>Physical Medicine</th>
+                  <th>Dr Reshma KK</th>
+                  <th>8606494233</th>
+ @if(!Auth::guest())
+
+<th></th><th></th>@endif               </tr>
+                <tr>
+                  <th>ENT</th>
+                  <th>Dr Jijo</th>
+                  <th>8281674833</th>
+ @if(!Auth::guest())
+
+<th></th><th></th>@endif               </tr>
+                <tr>
+                  <th>Community Medicine</th>
+                  <th>Dr Arun Jacob</th>
+                  <th>8907278569</th>
+ @if(!Auth::guest())
+
+<th></th><th></th>@endif               </tr>
+                <tr>
+                  <th>Geriatrics</th>
+                  <th>Dr Maneesha R</th>
+                  <th>9494744179</th>
+ @if(!Auth::guest())
+
+<th></th><th></th>@endif               </tr>
+                <tr>
+                  <th>Opthalmology</th>
+                  <th>Dr Kushal</th>
+                  <th></th>
+                   @if(!Auth::guest())
+
+<th></th><th></th>@endif
+               </tr>
             </tbody>
          </table>
       </div>
