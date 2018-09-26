@@ -49,7 +49,7 @@
             </div>
 
             <div class="col-sm">
-                <a href="#" style="text-decoration: none;">
+                <a href="/food" style="text-decoration: none;">
                     <div class="card" id="card_gradient1" style="width: 18rem;text-align: center;">
                             <div class="card-body">
                                 <i style="font-size:40px;color:white;" class="fa fa-cutlery"></i>                                
@@ -141,12 +141,12 @@
         <br>
         <div class="row">
             <div class="col-sm">
-               <a href="#" style="text-decoration: none;">
+               <a href="/volunteercare" style="text-decoration: none;">
                     <div class="card" id="card_gradient4" style="width: 18rem;text-align: center;">
                         <div class="card-body">
-                            <i class="fa fa-shield" style="font-size:40px;color:white"></i>
-                            <h5 class="card-title" style="font-weight: bold;color: white;font-family: 'Fugaz One', cursive;font-size: 25px">Security</h5>
-                            <h6 class="card-subtitle mb-2 text" style="color: white;">Security info</h6>
+                            <i class="fa fa-user-circle" style="font-size:40px;color:white"></i>
+                            <h5 class="card-title" style="font-weight: bold;color: white;font-family: 'Fugaz One', cursive;font-size: 25px">VCC</h5>
+                            <h6 class="card-subtitle mb-2 text" style="color: white;">VCC Informations</h6>
                         </div>
                     </div>
                 </a>
