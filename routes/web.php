@@ -28,6 +28,16 @@ Route::get('/info', function(){
 	return view('info.index');
 });
 
+Route::get('/about', function(){
+	return view('about');
+});
+
+Route::resource('information', 'InformationController');
+
+Route::resource('food', 'FoodController');
+
+Route::resource('volunteercare', 'VolunteercareController');
+
 Route::resource('ashramvol','AshramVolunteersController');
 
 Route::resource('transportation', 'TransportationController');

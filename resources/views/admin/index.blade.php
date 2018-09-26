@@ -120,7 +120,16 @@ var chartData = {
             <div class="card" id="card_gradient1">
                 <div class="card-header"><i class="fa fa-bullhorn"></i> Announcements</div>
                 <div class="card-body">
-                    
+                    <div class="col-sm">
+                        {!! Form::open(array('route' => 'information.store','data-parsley-validate' => '')) !!}
+                        {{ Form::label('message','Announcement :')}}
+                        {{ Form::text('message',null,array('class'=> 'form-control','required' => ''))}}
+                        <center>
+                           {{ Form::submit('Add Announcement',array('class'=>'btn btn-success ','style' =>'margin-top:20px;'))}}
+                           <a class="btn btn-danger " href="{{ url('/admin') }}" role="button" style="margin-top:20px">Cancel</a>
+                        </center>
+                        {!! Form::close() !!}
+                     </div>
                 </div>
             </div>
         </div>
