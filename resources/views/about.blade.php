@@ -1,5 +1,5 @@
 @extends('layouts.default') @section('content')
-<div class="container">
+<div class="container-lg">
 	<center>
    <div class="row" style="color: black;">
    	            <div class="col-sm">
@@ -35,7 +35,7 @@
   </div>
 </div>
 </div><br>
-<div class="row" style="color: black;">
+
 	<div class="col-sm">
 
 <div class="card" style="width: 18rem;">
@@ -47,8 +47,9 @@
   </div>
 </div>
 </div><br>
-	</div>
-   </div>
+
 </center>
+   </div>
+
 </div>
 @endsection
