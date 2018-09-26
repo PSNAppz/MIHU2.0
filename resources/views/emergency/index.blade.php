@@ -189,7 +189,7 @@
                   <th>KH.MD.U6MBB13074</th>
                   <th>7736645560</th>
                </tr>
-               <th>
+               <tr>
                   <th>Priya S</th>
                   <th>General Surgery</th>
                   <th>KH.MD.U6MBB13079</th>
