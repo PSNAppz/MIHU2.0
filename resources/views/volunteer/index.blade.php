@@ -38,6 +38,24 @@
       <div class="tab-pane fade show active " id="nav-shift" role="tabpanel" aria-labelledby="nav-shift-tab">
    <div class="accordion" id="accordionExample">
   <div class="card">
+      <div class="card-header" id="headingZero">
+        <h5 class="mb-0">
+          <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseZero" aria-expanded="true" aria-controls="collapseZero">
+            MIHU Volunteer Shift Updated
+          </button>
+        </h5>
+      </div>
+  
+      <div id="collapseZero" class="collapse show" aria-labelledby="headingZero" data-parent="#accordionExample">
+        <div class="card-body">
+          <center> <a href="https://docs.google.com/spreadsheets/d/1a5MnwgGDTSGr96_tl2JmAI4SHcfFl1UmsVRCX-XEshY/edit?usp=sharing">Student's Google Sheet</a><br>
+                    <a href="https://docs.google.com/spreadsheets/d/1ZMCBaDPXuXDgOYWhL4juC7bT34JclM18s4Rgp85QT-o/edit?usp=sharing">Student's Google Sheet 2</a>
+          </center>  
+
+        </div>
+      </div>
+    </div>
+  <div class="card">
     <div class="card-header" id="headingOne">
       <h5 class="mb-0">
         <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
@@ -45,8 +63,7 @@
         </button>
       </h5>
     </div>
-
-    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+    <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
       <div class="card-body">
         <center><img src="{{ asset('images/image1.png') }}" alt=" Map1" width="100%" height="70%"></center>  
       </div>

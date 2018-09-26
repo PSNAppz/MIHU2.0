@@ -72,12 +72,14 @@
                                 </div>
                                 @foreach($info as $i)
                                 <div class="modal-body" style="color:black;">
-                                        {{ $i->message }} 
-                                        @if(!Auth::guest()) 
-                                        | {{ Form::open(['method' => 'DELETE', 'route' => ['information.destroy', $i->id]]) }}
-                     {{ Form::submit('Delete', ['class' => 'btn btn-danger']) }}
-                     {{ Form::close() }}
-                                        @endif
+                                        <div class="alert alert-danger" role="alert">
+                                            {{ $i->message }} 
+                                            @if(!Auth::guest()) 
+                                            | {{ Form::open(['method' => 'DELETE', 'route' => ['information.destroy', $i->id]]) }}
+                                            {{ Form::submit('Delete', ['class' => 'btn btn-danger']) }}
+                                            {{ Form::close() }}
+                                            @endif
+                                            </div>
                                         </div>
                                 @endforeach 
                                 <div class="modal-footer">
