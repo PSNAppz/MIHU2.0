@@ -16,7 +16,8 @@
        $('#security').DataTable();
        $('#codered').DataTable();
        $('#manmissing').DataTable();    
-       $('#nurse').DataTable();  
+       $('#nurse').DataTable();
+       $('#aims').DataTable();  
       } );
    </script>
    <style type="text/css">
@@ -31,7 +32,8 @@
          <a class="nav-item nav-link active" id="nav-nurse-tab" data-toggle="tab" href="#nav-nurse" role="tab" aria-controls="nav-" aria-selected="false">Nursing Students Duty List</a>
          <a class="nav-item nav-link " id="nav-medical-tab" data-toggle="tab" href="#nav-medical" role="tab" aria-controls="nav-medical" aria-selected="true">Medical</a>
          <a class="nav-item nav-link" id="nav-fireandsafety-tab" data-toggle="tab" href="#nav-fireandsafety" role="tab" aria-controls="nav-fireandsafety" aria-selected="false">Fire and Safety</a>
-         <a class="nav-item nav-link" id="nav-security-tab" data-toggle="tab" href="#nav-security" role="tab" aria-controls="nav-security" aria-selected="false">Security</a>      
+         <a class="nav-item nav-link" id="nav-security-tab" data-toggle="tab" href="#nav-security" role="tab" aria-controls="nav-security" aria-selected="false">Security</a>  
+         <a class="nav-item nav-link" id="nav-aims-tab" data-toggle="tab" href="#nav-aims" role="tab" aria-controls="nav-aims" aria-selected="false">AIMS Intern List</a>      
                
         </div>
       <br>
@@ -73,6 +75,145 @@
                </tr>
                @endif
                @endforeach
+            </tbody>
+         </table>
+      </div>
+      <div class="tab-pane fade" id="nav-aims" role="tabpanel" aria-labelledby="nav-aims-tab">
+         <table id="aims" class="table table-striped table-bordered dt-responsive nowrap" style="width:100%;color:white;">
+            <thead>
+               <th>Name of Intern</th>
+               <th>Department</th>
+               <th>Roll No</th>
+               <th>Contact</th>
+            </thead>
+            <tbody>
+               <tr>
+                  <th>Gowri Asok</th>
+                  <th>Comm.Medicine</th>
+                  <th>KH.MD.U6MBB13047</th>
+                  <th>9605322386</th>
+               </tr>
+               <tr>
+                  <th>Dhanasree</th>
+                  <th>Comm.Medicine</th>
+                  <th>KH.MD.U6MBB13040</th>
+                  <th>7034425256</th>
+               </tr>
+               <tr>
+                  <th>Athulya Balagopal</th>
+                  <th>Comm.Medicine</th>
+                  <th>KH.MD.U6MBB13033</th>
+                  <th>9946214971</th>
+               </tr>
+               <tr>
+                  <th>Gayathri Santosh</th>
+                  <th>Comm.Medicine</th>
+                  <th>KH.MD.U6MBB13042</th>
+                  <th>8281630959</th>
+               </tr>
+               <tr>
+                  <th>Gayathri Kashyap</th>
+                  <th>Comm.Medicine</th>
+                  <th>KH.MD.U6MBB13043</th>
+                  <th>7034337667</th>
+               </tr>
+               <tr>
+                  <th>Navnaeeth</th>
+                  <th>Peadiatrics</th>
+                  <th>KH.MD.U6MBB13067</th>
+                  <th>8606598597</th>
+               </tr>
+               <tr>
+                  <th>Namith Ranjith</th>
+                  <th>Peadiatrics</th>
+                  <th>KH.MD.U6MBB13065</th>
+                  <th>9847360325</th>
+               </tr>
+               <tr>
+                  <th>Anjali Ajith</th>
+                  <th>ENT</th>
+                  <th>KH.MD.U6MBB13024</th>
+                  <th>7561051281</th>
+               </tr>
+               <tr>
+                  <th>Aparna Ajay</th>
+                  <th>Casuality</th>
+                  <th>KH.MD.U6MBB13026</th>
+                  <th>9072719477</th>
+               </tr>
+               <tr>
+                  <th>Keerthana G</th>
+                  <th>General Medicine</th>
+                  <th>KH.MD.U6MBB13055</th>
+                  <th>8281818620</th>
+               </tr>
+               <tr>
+                  <th>Keerthi Raj</th>
+                  <th>General Medicine</th>
+                  <th>KH.MD.U6MBB13057</th>
+                  <th>957336467</th>
+               </tr>
+               <tr>
+                  <th>Meenu C Nair</th>
+                  <th>General Medicine</th>
+                  <th>KH.MD.U6MBB13063</th>
+                  <th>7559920106</th>
+               </tr>
+               <tr>
+                  <th>Mohammed Aslam</th>
+                  <th>General Medicine</th>
+                  <th>KH.MD.U6MBB13064</th>
+                  <th>8907392893</th>
+               </tr>
+               <tr>
+                  <th>Suvarnameena</th>
+                  <th>OBG</th>
+                  <th>KH.MD.U6MBB13097</th>
+                  <th>9600795950</th>
+               </tr>
+               <tr>
+                  <th>Abhinav Vaidyanathan</th>
+                  <th>Pain & Palliative</th>
+                  <th>KH.MD.U6MBB13002</th>
+                  <th>8089683321</th>
+               </tr>
+               <tr>
+                  <th>Aishwarya Mathew</th>
+                  <th>Anaesthesia</th>
+                  <th>KH.MD.U6MBB13011</th>
+                  <th>9961608334</th>
+               </tr>
+               <tr>
+                  <th>Pillai Suraj Rashakrishnan</th>
+                  <th>General Surgery</th>
+                  <th>KH.MD.U6MBB13074</th>
+                  <th>7736645560</th>
+               </tr>
+               <tr>
+                  <th>Priya S</th>
+                  <th>General Surgery</th>
+                  <th>KH.MD.U6MBB13079</th>
+                  <th>8111913811</th>
+               </tr>
+               <tr>
+                  <th>Sarath krishna</th>
+                  <th>Anaesthesia</th>
+                  <th>KH.MD.U6MBB13089</th>
+                  <th>9539064091</th>
+               </tr>
+               <tr>
+                  <th>Amrita Baiju</th>
+                  <th>Ophthalmology</th>
+                  <th>KH.MD.U6MBB13018</th>
+                  <th>9496186895</th>
+               </tr>
+               <tr>
+                  <th>Amritha Ben Mani</th>
+                  <th>Orthopeadics</th>
+                  <th>KH.MD.U6MBB13017</th>
+                  <th>860658300</th>
+               </tr>
+   
             </tbody>
          </table>
       </div>
