@@ -157,7 +157,7 @@
                     <a href="/media" style="text-decoration: none;">
                         <div class="card-body">
                             <i class="fa fa-camera" style="font-size:40px;color:white"></i>
-                            <h5 class="card-title" style="font-weight: bold;color: white;font-family: 'Fugaz One', cursive;font-size: 25px">Ashram Volunteers</h5>
+                            <h5 class="card-title" style="font-weight: bold;color: white;font-family: 'Fugaz One', cursive;font-size: 25px">Ashram</h5>
                             <h6 class="card-subtitle mb-2 text" style="color: white;">Brahmachari's and Brahmacharinis's Details</h6>
                         </div>
                     </a>
