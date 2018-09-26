@@ -48,8 +48,8 @@
   
       <div id="collapseZero" class="collapse show" aria-labelledby="headingZero" data-parent="#accordionExample">
         <div class="card-body">
-          <center> <a href="https://docs.google.com/spreadsheets/d/1a5MnwgGDTSGr96_tl2JmAI4SHcfFl1UmsVRCX-XEshY/edit?usp=sharing">Student's Google Sheet</a><br>
-                    <a href="https://docs.google.com/spreadsheets/d/1ZMCBaDPXuXDgOYWhL4juC7bT34JclM18s4Rgp85QT-o/edit?usp=sharing">Student's Google Sheet 2</a>
+          <center> <a href="https://docs.google.com/spreadsheets/d/1k4LLJjRwMvZQ3BMuO2PwbbwdbPF7dhJAufZMl69eJyE/edit?usp=sharing">Duty Allocation Updated</a><br>
+                    <a href="https://docs.google.com/spreadsheets/d/1fdqRG9vPzBLHbXObdL-skSLFE8035iLygGJFuLS4tQg/edit?usp=sharing">MIHU Volunteer List</a>
           </center>  
 
         </div>
