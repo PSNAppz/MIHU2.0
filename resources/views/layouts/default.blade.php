@@ -70,11 +70,16 @@
                                     <span aria-hidden="true">&times;</span>
                                 </button>
                                 </div>
-                                <!--{{-- @foreach($info as $info)
-                                <div class="modal-body">
-                                        {{ Information::info->message }}
+                                @foreach($info as $i)
+                                <div class="modal-body" style="color:black;">
+                                        {{ $i->message }} 
+                                        @if(!Auth::guest()) 
+                                        | {{ Form::open(['method' => 'DELETE', 'route' => ['information.destroy', $i->id]]) }}
+                     {{ Form::submit('Delete', ['class' => 'btn btn-danger']) }}
+                     {{ Form::close() }}
+                                        @endif
                                         </div>
-                                @endforeach --}}-->
+                                @endforeach 
                                 <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                                 </div>

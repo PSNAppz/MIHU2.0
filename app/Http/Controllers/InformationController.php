@@ -6,6 +6,7 @@ use App\Information;
 use Illuminate\Http\Request;
 use Session;
 use App\LogEngine;
+use Auth;
 
 class InformationController extends Controller
 {
@@ -17,6 +18,7 @@ class InformationController extends Controller
     public function __construct(){
         $this->middleware('auth', ['only' => 'create', 'store', 'edit', 'update', 'destroy']);
     }
+
 
     public function index()
     {
@@ -56,7 +58,7 @@ class InformationController extends Controller
     $log->save();
     $information->save();
     Session::flash('success', 'Information Details successfully added!');
-    return redirect()->route('welcome');
+    return redirect()->back();
     }
 
     /**
@@ -109,8 +111,8 @@ class InformationController extends Controller
         $log->actionval = 3;
         $log->detailed_data = $info;
         $log->save();
-        $acc->delete();
+        $info->delete();
         Session::flash('success', 'Information details successfully removed!');
-        return redirect()->route('welcome');
+        return redirect()->back();
     }
 }
