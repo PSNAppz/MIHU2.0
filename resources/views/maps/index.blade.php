@@ -11,6 +11,12 @@
    	<div class="tab-pane fade show active" id="nav-map" role="tabpanel" aria-labelledby="nav-map-tab">
          <center><img src="{{ asset('images/Map1.jpg') }}" alt=" Map1" width="100%" height="70%"></center>	
       </div>
+      <div class="tab-pane fade show active" id="nav-map" role="tabpanel" aria-labelledby="nav-map-tab">
+         <center><img src="{{ asset('images/mapinfo1.png') }}" alt=" Map1" width="100%" height="70%"></center>  
+      </div>
+      <div class="tab-pane fade show active" id="nav-map" role="tabpanel" aria-labelledby="nav-map-tab">
+         <center><img src="{{ asset('images/mapinfo2.png') }}" alt=" Map1" width="100%" height="70%"></center>  
+      </div>
 	</div>
 
 @endsection
