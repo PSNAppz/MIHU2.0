@@ -45,8 +45,8 @@
                <th>Place/Category</th>
                <th>For:</th>
                <th>Accommodation at</th>
-               <th>Contact Name</th>
-               <th>Phone</th>
+             <!--  <th>Contact Name</th>
+               <th>Phone</th> -->
                @if(!Auth::guest())
                <th>Update</th>
                <th>Delete</th>
@@ -70,8 +70,8 @@
                   <th>Police Women</th>
                   @endif
                   <th>{{ $acc->locationofAcc}}</th>
-                  <th>{{ $acc->coord}}</th>
-                  <th>{{ $acc->contact}}</th>
+                 <!-- <th></th>
+                  <th></th> -->
                   @if(!Auth::guest())
                   <th><a class="btn btn-warning" href="{{ route('accommodation.edit', $acc->id,'/edit') }}" role="button">Update</a></th>
                   <th>  {{ Form::open(['method' => 'DELETE', 'route' => ['accommodation.destroy', $acc->id]]) }}
@@ -92,8 +92,8 @@
                <th>Place/Category</th>
                <th>For:</th>
                <th>Accommodation at</th>
-               <th>Contact Name</th>
-               <th>Phone</th>
+               <!-- <th>Contact Name</th>
+               <th>Phone</th> -->
                @if(!Auth::guest())
                <th></th>
                <th></th>
@@ -117,8 +117,8 @@
                   <th>Police Women</th>
                   @endif
                   <th>{{ $acc->locationofAcc}}</th>
-                  <th>{{ $acc->coord}}</th>
-                  <th>{{ $acc->contact}}</th>
+                  <!-- <th></th>
+                  <th></th> -->
                   @if(!Auth::guest())
                   <th><a class="btn btn-warning" href="{{ route('accommodation.edit', $acc->id,'/edit') }}" role="button">Update</a></th>
                   <th>  {{ Form::open(['method' => 'DELETE', 'route' => ['accommodation.destroy', $acc->id]]) }}
