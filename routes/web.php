@@ -32,6 +32,8 @@ Route::get('/about', function(){
 	return view('about');
 });
 
+Route::resource('information', 'InformationController');
+
 Route::resource('food', 'FoodController');
 
 Route::resource('volunteercare', 'VolunteercareController');
