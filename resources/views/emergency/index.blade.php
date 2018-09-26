@@ -28,10 +28,11 @@
    <br>
    <nav>
       <div class="nav nav-tabs" id="nav-tab" role="tablist">
-         <a class="nav-item nav-link active" id="nav-medical-tab" data-toggle="tab" href="#nav-medical" role="tab" aria-controls="nav-medical" aria-selected="true">Medical</a>
+         <a class="nav-item nav-link active" id="nav-nurse-tab" data-toggle="tab" href="#nav-nurse" role="tab" aria-controls="nav-" aria-selected="false">Nursing Students Duty List</a>
+         <a class="nav-item nav-link " id="nav-medical-tab" data-toggle="tab" href="#nav-medical" role="tab" aria-controls="nav-medical" aria-selected="true">Medical</a>
          <a class="nav-item nav-link" id="nav-fireandsafety-tab" data-toggle="tab" href="#nav-fireandsafety" role="tab" aria-controls="nav-fireandsafety" aria-selected="false">Fire and Safety</a>
          <a class="nav-item nav-link" id="nav-security-tab" data-toggle="tab" href="#nav-security" role="tab" aria-controls="nav-security" aria-selected="false">Security</a>      
-         <a class="nav-item nav-link" id="nav-nurse-tab" data-toggle="tab" href="#nav-nurse" role="tab" aria-controls="nav-" aria-selected="false">Nursing Students Duty List</a>      
+               
         </div>
       <br>
       @if(!Auth::guest())
@@ -44,7 +45,7 @@
       <br>
    </nav>
    <div class="tab-content" id="nav-tabContent">
-      <div class="tab-pane fade show active" id="nav-medical" role="tabpanel" aria-labelledby="nav-home-tab">
+      <div class="tab-pane fade" id="nav-medical" role="tabpanel" aria-labelledby="nav-home-tab">
          <table id="medical" class="table table-striped table-bordered dt-responsive nowrap" style="width:100%;color:white;">
             <thead>
                <th>Service</th>
@@ -137,7 +138,7 @@
             </tbody>
          </table>
       </div>
-      <div class="tab-pane fade" id="nav-nurse" role="tabpanel" aria-labelledby="nav-nurse-tab">
+      <div class="tab-pane fade show active" id="nav-nurse" role="tabpanel" aria-labelledby="nav-nurse-tab">
          <table id="nurse" class="table table-striped table-bordered" cellspacing="0" width="100%">
             <thead>
                <th>Location</th>

@@ -29,6 +29,7 @@
          <a class="nav-item nav-link" id="nav-dev-tab" data-toggle="tab" href="#nav-dev" role="tab" aria-controls="nav-dev" aria-selected="false">Staff Volunteers</a>
          <a class="nav-item nav-link" id="nav-stafshf-tab" data-toggle="tab" href="#nav-stafshf" role="tab" aria-controls="nav-stafshf" aria-selected="false">Staff Shifts</a>
          <a class="nav-item nav-link" id="nav-ash-tab" data-toggle="tab" href="#nav-ash" role="tab" aria-controls="nav-ash" aria-selected="false">Ashram Volunteers</a>
+         <a class="nav-item nav-link" id="nav-other-tab" data-toggle="tab" href="#nav-other" role="tab" aria-controls="nav-other" aria-selected="false">Other Volunteers</a>
 
       </div>
       <br>
@@ -279,6 +280,9 @@
                @endforeach
             </tbody>
          </table>
+      </div>
+      <div class="tab-pane fade show " id="nav-other" role="tabpanel" aria-labelledby="nav-other-tab">
+                 <center><img src="{{ asset('images/sub.png') }}" alt=" Map1" width="100%" height="70%"></center>  
       </div>
    </div>
 </div>
