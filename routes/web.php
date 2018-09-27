@@ -11,9 +11,11 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'InformationController@index');
+
+Route::post('postLink', 'InformationController@storeLink')->name('postLink');
+
+
 Auth::routes();
 
 Route::get('/register',function(){

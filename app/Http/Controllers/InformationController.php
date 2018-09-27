@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Session;
 use App\LogEngine;
 use Auth;
+use App\live;
 
 class InformationController extends Controller
 {
@@ -22,7 +23,9 @@ class InformationController extends Controller
 
     public function index()
     {
-        //
+        $live = live::all();
+        // echo($live);
+        return view('welcome')->withLive($live);
     }
 
     /**
@@ -30,6 +33,41 @@ class InformationController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+    public function storeLink(Request $request){
+        $this->validate($request, array(
+            'link' => 'required',
+        ));
+        // store in the database
+        $live = new live;
+        $log = new LogEngine();
+        $live->link = $request->link;
+        $log->user_id=Auth::user()->id;
+        $log->name=Auth::user()->name;
+        $log->action="Link";
+        $log->actionval = 1;
+        $log->detailed_data = $live;
+        $log->save();
+        $live->save();
+        Session::flash('success', 'Live Link added successfully added!');
+        return redirect()->back();
+    }
+
+    public function destroyLink(live $live)
+    {
+        $live = live::find($live->id);
+        $log = new LogEngine();
+        $log->user_id=Auth::user()->id;
+        $log->name=Auth::user()->name;
+        $log->action="Live";
+        $log->actionval = 3;
+        $log->detailed_data = $live;
+        $log->save();
+        $live->delete();
+        Session::flash('success', 'Live details successfully removed!');
+        return redirect()->back();
+    } 
+
     public function create()
     {
         //

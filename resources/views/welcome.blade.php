@@ -177,9 +177,10 @@
             </div>
             </div><br><br><br>
                 <div class="embed-responsive embed-responsive-16by9">
-                    <center><iframe width="560" height="315" src="https://www.youtube.com/embed/ltlLMZdDAlQ?rel=0&amp;controls=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                <center><iframe width="560" height="315" src="{{ $live[0]->link }}" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
                     </center>
                 </div>
+
     </center>
     </div>
 
