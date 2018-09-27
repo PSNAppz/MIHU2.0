@@ -130,6 +130,16 @@ var chartData = {
                         </center>
                         {!! Form::close() !!}
                      </div>
+                     <div class="col-sm">
+                            {!! Form::open(array('route' => 'postLink','data-parsley-validate' => '')) !!}
+                            {{ Form::label('link','Link:')}}
+                            {{ Form::text('link',null,array('class'=> 'form-control','required' => ''))}}
+                            <center>
+                               {{ Form::submit('Add Link',array('class'=>'btn btn-success ','style' =>'margin-top:20px;'))}}
+                               <a class="btn btn-danger " href="{{ url('/admin') }}" role="button" style="margin-top:20px">Cancel</a>
+                            </center>
+                            {!! Form::close() !!}
+                         </div>
                 </div>
             </div>
         </div>
